@@ -1,38 +1,726 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>SEO Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phùng Đình Thạnh | SEO Portfolio</title>
+  <meta name="description" content="Portfolio cá nhân của Phùng Đình Thạnh - SEO & Content Manager chuyên xây dựng chiến lược SEO tổng thể, tối ưu nội dung và tăng trưởng organic traffic bền vững." />
   <style>
-    body {
-      font-family: Arial;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    h1 { color: #333; }
+
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #111831;
+      --card: rgba(255,255,255,0.06);
+      --line: rgba(255,255,255,0.12);
+      --text: #f4f7ff;
+      --muted: #aab3c5;
+      --primary: #53b3ff;
+      --primary-2: #8b5cf6;
+      --success: #37d67a;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(83,179,255,0.18), transparent 20%),
+        radial-gradient(circle at left, rgba(139,92,246,0.16), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(11,16,32,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: var(--muted);
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .nav-menu a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      box-shadow: 0 10px 30px rgba(83,179,255,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.16);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(83,179,255,0.12);
+      border: 1px solid rgba(83,179,255,0.24);
+      color: #9fd6ff;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 18px;
+    }
+
+    .stat-card small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .stat-card strong {
+      font-size: 18px;
+    }
+
+    .profile-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(83,179,255,0.22), transparent 65%);
+      pointer-events: none;
+    }
+
+    .profile-top {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .section {
+      padding: 32px 0 72px;
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
+    }
+
+    .section-heading .mini {
+      color: #9fd6ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 760px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .highlight-card {
+      padding: 24px;
+    }
+
+    .highlight-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .highlight-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      padding: 26px;
+    }
+
+    .exp-year {
+      color: #9fd6ff;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .exp-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: rgba(83,179,255,0.12);
+      border: 1px solid rgba(83,179,255,0.16);
+      font-weight: 800;
+      color: #9fd6ff;
+    }
+
+    .experience-item h3 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .experience-item h4 {
+      color: #9fd6ff;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .experience-item p {
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .edu-box,
+    .info-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .edu-box strong,
+    .info-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .edu-box span,
+    .info-box span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e4e9f5;
+      font-size: 14px;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .case-card {
+      padding: 24px;
+    }
+
+    .case-card h3 {
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .case-card b {
+      color: var(--text);
+    }
+
+    .contact-card {
+      padding: 34px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(83,179,255,0.14), rgba(139,92,246,0.12));
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 14px auto 24px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 24px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .two-col,
+      .highlight-grid,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-menu {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Xin chào, tôi là SEO Executive</h1>
-  <p>Kinh nghiệm SEO: 1-2 năm</p>
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <div class="logo">Thạnh<span>.SEO</span></div>
+      <nav class="nav-menu">
+        <a href="#about">Giới thiệu</a>
+        <a href="#experience">Kinh nghiệm</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Kỹ năng</h2>
-  <ul>
-    <li>Keyword research</li>
-    <li>On-page SEO</li>
-    <li>Backlink & Entity</li>
-  </ul>
+  <section class="hero" id="about">
+    <div class="container hero-grid">
+      <div class="fade-up">
+        <span class="badge">SEO & Content Manager Portfolio</span>
+        <h1>PHÙNG ĐÌNH THẠNH</h1>
+        <p>
+          Mình là người làm SEO theo hướng thực chiến: kết hợp chiến lược nội dung, tối ưu kỹ thuật
+          và tư duy tăng trưởng để website không chỉ có traffic mà còn có chuyển đổi thật.
+        </p>
 
-  <h2>Dự án</h2>
-  <ul>
-    <li>Project A – Traffic 0 → 5000</li>
-    <li>Project B – Top 10 keyword</li>
-  </ul>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Liên hệ với tôi</a>
+          <a href="#case-study" class="btn btn-outline">Xem case study</a>
+        </div>
 
-  <h2>Liên hệ</h2>
-  <p>Email: yourmail@gmail.com</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <small>Kinh nghiệm</small>
+            <strong>SEO & Content Manager</strong>
+          </div>
+          <div class="stat-card">
+            <small>Học vấn</small>
+            <strong>Cao Đẳng Văn Lang</strong>
+          </div>
+          <div class="stat-card">
+            <small>Định hướng</small>
+            <strong>Senior / SEO Leader</strong>
+          </div>
+        </div>
+      </div>
 
+      <div class="card profile-card fade-up">
+        <div class="profile-top">PĐT</div>
+        <h3 style="font-size: 24px; margin-bottom: 14px;">Thông tin cá nhân</h3>
+        <p style="color: var(--muted); margin-bottom: 10px;"><b style="color: white;">Ngày sinh:</b> 12/02/2000</p>
+        <p style="color: var(--muted); margin-bottom: 10px;"><b style="color: white;">Email:</b> pdt1302@gmail.com</p>
+        <p style="color: var(--muted); margin-bottom: 10px;"><b style="color: white;">Điện thoại:</b> 0888881265</p>
+        <p style="color: var(--muted); margin-bottom: 10px;"><b style="color: white;">Địa chỉ:</b> 566 Dương Quảng Hàm, P.5, Q.Gò Vấp</p>
+        <p style="color: var(--muted);"><b style="color: white;">Facebook:</b> fb.com/dyntane</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="highlight-grid">
+        <div class="card highlight-card fade-up">
+          <h3>Chiến lược SEO tổng thể</h3>
+          <p>Làm từ audit, nghiên cứu từ khóa, content plan, tối ưu onpage, entity, backlink cho tới chuyển đổi.</p>
+        </div>
+        <div class="card highlight-card fade-up">
+          <h3>Content đi cùng technical</h3>
+          <p>Không làm SEO kiểu vá víu. Mình ưu tiên nền tảng kỹ thuật sạch và nội dung đúng intent để tăng trưởng bền hơn.</p>
+        </div>
+        <div class="card highlight-card fade-up">
+          <h3>Tư duy tăng trưởng thực chiến</h3>
+          <p>Không chạy theo vài con số cho đẹp. Mục tiêu là organic traffic chất lượng, lead thật và hiệu quả thật.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-heading fade-up">
+        <span class="mini">Experience</span>
+        <h2>Kinh nghiệm làm việc</h2>
+        <p>Hành trình SEO của mình đi qua nhiều mô hình khác nhau: doanh nghiệp, thương mại điện tử, dịch vụ và hệ thống nội dung đa kênh.</p>
+      </div>
+
+      <div class="experience-list">
+        <div class="card experience-item fade-up">
+          <div>
+            <div class="exp-badge">01</div>
+            <div class="exp-year">2022 - 2024</div>
+          </div>
+          <div>
+            <h3>Cty TNHH Thiết Bị Và Dụng Cụ Tân Thành Phát</h3>
+            <h4>SEO & Content Manager</h4>
+            <p>
+              Quản lý chiến lược SEO toàn diện gồm Onpage, Offpage và Content Media.
+              Phát triển hệ thống nội dung đa kênh, biên tập hình ảnh phục vụ chiến lược guest post,
+              triển khai entity và tối ưu hiệu suất tìm kiếm để tăng trưởng organic traffic bền vững.
+            </p>
+          </div>
+        </div>
+
+        <div class="card experience-item fade-up">
+          <div>
+            <div class="exp-badge">02</div>
+            <div class="exp-year">2024 - 2025</div>
+          </div>
+          <div>
+            <h3>Tiến Trần Mobile</h3>
+            <h4>SEO & Content Manager (Online)</h4>
+            <p>
+              Quản lý chiến lược SEO tổng thể, sử dụng Ahrefs, Google Search Console và Google Analytics
+              để phân tích dữ liệu, tối ưu website, xử lý lỗi kỹ thuật, cải thiện Health Score và Pagespeed.
+              Đồng thời phát triển nội dung blog và mô tả sản phẩm chuẩn SEO nhằm tăng độ phủ từ khóa.
+            </p>
+          </div>
+        </div>
+
+        <div class="card experience-item fade-up">
+          <div>
+            <div class="exp-badge">03</div>
+            <div class="exp-year">2025 - 01/2026</div>
+          </div>
+          <div>
+            <h3>Vận Chuyển Phùng Quân</h3>
+            <h4>SEO & Content Manager (Online)</h4>
+            <p>
+              Tối ưu giao diện website để cải thiện trải nghiệm người dùng, đồng thời triển khai chiến lược SEO
+              và Content Media toàn diện. Xây dựng hệ thống nội dung đa kênh hướng tới organic traffic
+              chất lượng và chuyển đổi bền vững.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container two-col">
+      <div class="card panel fade-up">
+        <div class="section-heading" style="margin-bottom: 10px;">
+          <span class="mini">Education</span>
+          <h2>Học vấn & định hướng</h2>
+        </div>
+
+        <div class="edu-box">
+          <strong>Cao Đẳng Văn Lang</strong>
+          <span>2018 - 2021</span>
+        </div>
+
+        <div class="info-box">
+          <strong>Mục tiêu nghề nghiệp</strong>
+          <span>Phát triển lên vị trí Senior SEO / SEO Leader với tư duy chiến lược, data-driven và tăng trưởng dài hạn.</span>
+        </div>
+
+        <div class="info-box">
+          <strong>Sở thích</strong>
+          <span>Bơi lội, đá banh</span>
+        </div>
+      </div>
+
+      <div class="card panel fade-up">
+        <div class="section-heading" style="margin-bottom: 10px;">
+          <span class="mini">Technical Skill</span>
+          <h2>Kỹ năng chuyên môn</h2>
+        </div>
+
+        <div class="skills">
+          <span class="skill">SEO Onpage</span>
+          <span class="skill">SEO Offpage</span>
+          <span class="skill">Content SEO</span>
+          <span class="skill">Content Strategy</span>
+          <span class="skill">Keyword Research</span>
+          <span class="skill">Google Search Console</span>
+          <span class="skill">Google Analytics</span>
+          <span class="skill">Ahrefs</span>
+          <span class="skill">Entity Building</span>
+          <span class="skill">Guest Post</span>
+          <span class="skill">Technical Audit</span>
+          <span class="skill">UX Website</span>
+        </div>
+
+        <div class="info-box">
+          <strong>Điểm mạnh</strong>
+          <span>Giao tiếp tốt, tư duy triển khai thực chiến, làm việc bám mục tiêu tăng trưởng.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="case-study">
+    <div class="container">
+      <div class="section-heading fade-up">
+        <span class="mini">Case Study</span>
+        <h2>Dự án tiêu biểu</h2>
+        <p>Phần này bạn có thể thay bằng case thật sau. Mình đang set form pro sẵn cho bạn, chỉ cần thay số liệu là chiến được.</p>
+      </div>
+
+      <div class="case-grid">
+        <div class="card case-card fade-up">
+          <h3>Project SEO Website A</h3>
+          <p><b>Vấn đề:</b> Website gần như chưa có traffic organic, cấu trúc nội dung rời rạc.</p>
+          <p><b>Giải pháp:</b> Audit tổng thể, tối ưu onpage, xây entity, bổ sung content theo intent và triển khai backlink chọn lọc.</p>
+          <p><b>Kết quả:</b> Traffic tăng từ 0 lên 5.000 lượt trong 3 tháng.</p>
+        </div>
+
+        <div class="card case-card fade-up">
+          <h3>Project SEO Website B</h3>
+          <p><b>Vấn đề:</b> Từ khóa chưa có thứ hạng tốt, website load chậm và tỷ lệ thoát cao.</p>
+          <p><b>Giải pháp:</b> Tối ưu Pagespeed, cải thiện UX, viết lại landing page và tối ưu cụm từ khóa chính.</p>
+          <p><b>Kết quả:</b> Nhiều từ khóa vào top 10, tăng impression và click đều theo tháng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="card contact-card fade-up">
+        <span class="mini">Get In Touch</span>
+        <h2 style="font-size: clamp(28px, 4vw, 42px);">Cùng làm ra một website có traffic, có lead, có giá trị thật</h2>
+        <p>
+          Nếu bạn đang cần một người làm SEO có tư duy chiến lược, bám data, hiểu nội dung và biết tối ưu website theo hướng tăng trưởng dài hạn,
+          mình luôn sẵn sàng kết nối.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:pdt1302@gmail.com">pdt1302@gmail.com</a>
+          <a class="btn btn-outline" href="tel:0888881265">0888881265</a>
+          <a class="btn btn-outline" href="https://facebook.com/dyntane" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Phùng Đình Thạnh - SEO Portfolio
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
