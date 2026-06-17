@@ -4,894 +4,898 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Phùng Đình Thạnh — SEO & Content Manager</title>
-<meta name="description" content="Portfolio chuyên nghiệp của Phùng Đình Thạnh — SEO & Content Manager với kinh nghiệm xây dựng chiến lược SEO tổng thể, tối ưu kỹ thuật và tăng trưởng organic traffic bền vững." />
+<meta name="description" content="Portfolio chuyên nghiệp của Phùng Đình Thạnh — SEO & Content Manager. Xây dựng chiến lược SEO tổng thể, tối ưu kỹ thuật, content production đa nền tảng (AI, video, hình ảnh) và tăng trưởng organic traffic bền vững." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#06090f;
-  --bg2:#0c1018;
-  --bg3:#101520;
-  --surface:rgba(255,255,255,0.042);
-  --surface2:rgba(255,255,255,0.07);
-  --border:rgba(255,255,255,0.085);
-  --border2:rgba(255,255,255,0.14);
-  --text:#eef1f8;
-  --text2:#8a95aa;
-  --text3:#5c6578;
-  --accent:#3b82f6;
-  --accent2:#6366f1;
-  --accent3:#06b6d4;
-  --green:#22c55e;
-  --amber:#f59e0b;
-  --r:16px;
-  --r2:24px;
+  --bg:#fbfaf8;
+  --bg-soft:#f4f2ee;
+  --panel:#ffffff;
+  --ink:#181614;
+  --ink2:#5c574f;
+  --ink3:#928c80;
+  --line:#e6e2da;
+  --line2:#d8d2c5;
+  --accent:#9a5b2e;
+  --accent-soft:#f3e7da;
+  --accent2:#445c4a;
+  --accent2-soft:#e6ece6;
+  --r:4px;
+  --maxw:1120px;
 }
 html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+  color:var(--ink);
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-
-/* ─── TYPOGRAPHY ─── */
-.display{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.03em;line-height:1.05}
-.mono{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3)}
-
-/* ─── LAYOUT ─── */
-.wrap{width:min(1160px,92%);margin:0 auto}
+.serif{font-family:'Source Serif 4',serif}
+.wrap{width:min(var(--maxw),92%);margin:0 auto}
 
 /* ─── NAV ─── */
 nav{
   position:sticky;top:0;z-index:100;
-  border-bottom:1px solid var(--border);
-  background:rgba(6,9,15,0.82);
-  backdrop-filter:blur(18px);
+  background:rgba(251,250,248,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;gap:20px}
-.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em}
-.logo em{color:var(--accent);font-style:normal}
-.nav-links{display:flex;gap:6px}
-.nav-links a{
-  padding:6px 13px;border-radius:999px;
-  font-size:13.5px;color:var(--text2);
-  transition:color .2s,background .2s;
-}
-.nav-links a:hover{color:var(--text);background:var(--surface2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-family:'Source Serif 4',serif;font-weight:600;font-size:19px;letter-spacing:-0.01em}
+.logo .dot{color:var(--accent)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13.5px;color:var(--ink2);font-weight:500;position:relative;padding-bottom:3px;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .25s;transform-origin:left}
+.nav-links a:hover::after{transform:scaleX(1)}
 .nav-cta{
-  padding:8px 20px;border-radius:999px;
-  font-size:13.5px;font-weight:600;
-  background:var(--accent);color:#fff;
-  transition:opacity .2s,transform .2s;
+  padding:9px 20px;border:1px solid var(--ink);border-radius:999px;
+  font-size:13px;font-weight:600;transition:.2s;
 }
-.nav-cta:hover{opacity:.9;transform:translateY(-1px)}
+.nav-cta:hover{background:var(--ink);color:var(--bg)}
 
 /* ─── HERO ─── */
-.hero{padding:90px 0 70px}
-.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 14px 6px 10px;border-radius:999px;
-  background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.22);
-  font-size:12.5px;color:#93c5fd;margin-bottom:22px;
+.hero{padding:84px 0 64px;border-bottom:1px solid var(--line)}
+.hero-top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:flex-end;margin-bottom:48px}
+.kicker{
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ink3);font-weight:600;margin-bottom:22px;
 }
-.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.hero h1{font-size:clamp(42px,5.5vw,68px);margin-bottom:20px}
-.hero h1 .name-accent{
-  background:linear-gradient(135deg,#60a5fa,#818cf8,#38bdf8);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.kicker .line{width:30px;height:1px;background:var(--ink3)}
+.hero h1{font-family:'Source Serif 4',serif;font-weight:600;font-size:clamp(34px,5.2vw,64px);letter-spacing:-0.015em;line-height:1.08;max-width:780px}
+.hero h1 i{color:var(--accent);font-style:italic;position:relative}
+.hero h1 i::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;height:3px;
+  background:var(--accent-soft);z-index:-1;border-radius:2px;
 }
-.hero-desc{font-size:17px;color:var(--text2);max-width:680px;margin-bottom:32px;line-height:1.75}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:600;transition:.25s;cursor:pointer;border:none}
-.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 24px rgba(59,130,246,0.28)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(59,130,246,0.38)}
-.btn-ghost{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
-.btn-ghost:hover{background:rgba(255,255,255,0.1)}
+.role-tag{
+  text-align:right;flex-shrink:0;
+}
+.role-tag .r1{font-size:15px;font-weight:600;color:var(--ink)}
+.role-tag .r2{font-size:13px;color:var(--ink3);margin-top:4px}
 
-/* ─── KPI ROW ─── */
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.kpi{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
-  padding:18px 20px;
+.hero-body{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+.hero-desc{font-size:17px;color:var(--ink2);max-width:600px;margin-bottom:30px}
+.hero-desc strong{color:var(--ink);font-weight:600}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 26px;
+  font-size:14px;font-weight:600;border-radius:999px;transition:.2s;cursor:pointer;
 }
-.kpi-label{font-size:11.5px;color:var(--text3);margin-bottom:8px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase}
-.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
-.kpi-sub{font-size:12px;color:var(--text3);margin-top:4px}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:var(--accent)}
+.btn-line{border:1px solid var(--line2);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
 
-/* ─── PROFILE CARD ─── */
-.profile-card{
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);
-  padding:28px;position:relative;overflow:hidden;
-}
-.profile-card::before{
-  content:'';position:absolute;inset:auto -60px -60px auto;
-  width:180px;height:180px;
-  background:radial-gradient(circle,rgba(99,102,241,0.18),transparent 70%);
-  pointer-events:none;
-}
-.avatar{
-  width:72px;height:72px;border-radius:20px;
-  background:linear-gradient(135deg,#3b82f6,#6366f1);
-  display:grid;place-items:center;
-  font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;
-  margin-bottom:18px;
-}
-.profile-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px}
-.profile-title{font-size:13px;color:var(--accent3);font-weight:600;margin-bottom:18px;letter-spacing:0.02em}
-.profile-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13.5px}
-.profile-row-label{color:var(--text3);min-width:76px;flex-shrink:0;padding-top:1px}
-.profile-row-val{color:var(--text2)}
-.profile-row a{color:var(--accent);transition:opacity .2s}
-.profile-row a:hover{opacity:.8}
-.status-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:6px 12px;border-radius:999px;
-  background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);
-  font-size:12px;color:#86efac;font-weight:500;margin-top:6px;
-}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.info-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.info-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.info-row .k{color:var(--ink3)}
+.info-row .v{color:var(--ink);font-weight:500;text-align:right}
+.info-row .v a:hover{color:var(--accent)}
 
-/* ─── SECTIONS ─── */
-section{padding:72px 0}
-section.alt{background:var(--bg2)}
+/* ─── STATS STRIP ─── */
+.stats-strip{border-bottom:1px solid var(--line);background:var(--bg-soft)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-cell{
+  padding:28px 30px;border-right:1px solid var(--line);
+}
+.stat-cell:last-child{border-right:none}
+.stat-cell .num{font-family:'Source Serif 4',serif;font-size:32px;font-weight:600;color:var(--ink)}
+.stat-cell .lbl{font-size:12.5px;color:var(--ink3);margin-top:6px;line-height:1.4}
 
-.section-label{
-  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+/* ─── SECTION SHELL ─── */
+section{padding:80px 0}
+.sec-head{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-bottom:48px;position:relative}
+.sec-num{font-family:'Source Serif 4',serif;font-size:13px;color:var(--accent);letter-spacing:0.06em;font-weight:600}
+.sec-num span{display:block;width:30px;height:2px;background:var(--accent);margin-top:10px;border-radius:2px}
+.sec-title{
+  font-family:'Source Serif 4',serif;font-size:clamp(26px,3vw,36px);font-weight:600;
+  letter-spacing:-0.01em;margin-bottom:14px;position:relative;padding-left:18px;
 }
-.section-label span{font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3)}
-.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--accent);border-radius:2px}
-.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
-.section-desc{color:var(--text2);font-size:16px;max-width:660px;line-height:1.75}
+.sec-title::before{
+  content:'';position:absolute;left:0;top:6px;bottom:6px;width:4px;
+  background:var(--accent);border-radius:2px;
+}
+.sec-desc{color:var(--ink2);font-size:15.5px;max-width:560px}
 
-/* ─── PILLARS ─── */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.pillar{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);
-  padding:28px 24px;transition:border-color .2s;
+/* ─── CAPABILITIES (pillars) ─── */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cap-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 28px;position:relative;transition:background .2s}
+.cap-cell:hover{background:var(--bg-soft)}
+.cap-cell .idx{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  font-family:'Source Serif 4',serif;font-size:13px;font-weight:600;
+  color:var(--accent-soft);background:var(--accent);margin-bottom:18px;
 }
-.pillar:hover{border-color:var(--border2)}
-.pillar-icon{
-  width:44px;height:44px;border-radius:14px;
-  display:grid;place-items:center;margin-bottom:18px;
-  font-size:20px;
+.cap-cell h3{
+  font-size:17px;font-weight:700;margin-bottom:10px;
+  position:relative;padding-left:14px;
 }
-.pillar-icon.blue{background:rgba(59,130,246,0.12);color:#60a5fa}
-.pillar-icon.purple{background:rgba(99,102,241,0.12);color:#a5b4fc}
-.pillar-icon.cyan{background:rgba(6,182,212,0.12);color:#67e8f9}
-.pillar h3{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px}
-.pillar p{font-size:14px;color:var(--text2);line-height:1.7}
+.cap-cell h3::before{
+  content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;
+  background:var(--accent2);border-radius:2px;
+}
+.cap-cell p{font-size:14px;color:var(--ink2);line-height:1.7}
 
 /* ─── EXPERIENCE ─── */
-.exp-list{display:grid;gap:20px;margin-top:8px}
-.exp-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);
-  overflow:hidden;transition:border-color .25s;
+.exp-item{border-top:1px solid var(--line);padding:44px 0}
+.exp-item:last-child{border-bottom:1px solid var(--line)}
+.exp-grid{display:grid;grid-template-columns:280px 1fr;gap:40px}
+.exp-side .yr{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--accent);font-weight:700;letter-spacing:0.04em;margin-bottom:12px;
 }
-.exp-card:hover{border-color:var(--border2)}
-.exp-header{
-  display:grid;grid-template-columns:72px 1fr;
-  gap:24px;padding:30px;align-items:start;
-  border-bottom:1px solid var(--border);
+.exp-side .yr::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.exp-side h3{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;margin-bottom:6px}
+.exp-side .role{
+  display:inline-block;font-size:12.5px;color:var(--accent2);font-weight:700;margin-bottom:16px;
+  padding:4px 10px;background:var(--accent2-soft);border-radius:4px;letter-spacing:0.02em;
 }
-.exp-num{
-  font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:700;
-  color:rgba(255,255,255,0.06);line-height:1;
-  padding-top:4px;
+.exp-side .industry{font-size:13px;color:var(--ink3);padding-top:14px;border-top:1px solid var(--line);max-width:220px}
+.exp-img{width:100%;border:1px solid var(--line);margin-bottom:24px;filter:saturate(0.92)}
+
+.exp-block-title{
+  font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:13px;display:flex;align-items:center;gap:8px;
 }
-.exp-company{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-bottom:4px}
-.exp-role{font-size:14px;color:var(--accent3);font-weight:600;margin-bottom:10px;letter-spacing:0.02em}
-.exp-meta{display:flex;gap:12px;flex-wrap:wrap}
-.tag{
-  padding:4px 11px;border-radius:999px;font-size:12px;font-weight:500;
-}
-.tag-time{background:rgba(255,255,255,0.06);color:var(--text2);border:1px solid var(--border)}
-.tag-type{background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)}
-.exp-body{padding:30px}
-.exp-img{
-  width:100%;border-radius:14px;margin-bottom:26px;
-  border:1px solid var(--border);object-fit:cover;max-height:260px;
-}
-.exp-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-.exp-col h4{font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.exp-col ul{list-style:none;display:grid;gap:9px}
-.exp-col ul li{font-size:13.5px;color:var(--text2);padding-left:16px;position:relative;line-height:1.55}
-.exp-col ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.6}
+.exp-block-title::before{content:'';width:14px;height:2px;background:var(--accent);border-radius:2px;flex-shrink:0}
+.exp-block{margin-bottom:24px}
+.exp-block:last-of-type{margin-bottom:0}
+.exp-block ul{list-style:none;display:grid;gap:8px}
+.exp-block ul li{font-size:14px;color:var(--ink2);padding-left:16px;position:relative}
+.exp-block ul li::before{content:'—';position:absolute;left:0;color:var(--ink3)}
+
 .exp-result{
-  display:flex;align-items:center;gap:14px;
-  margin-top:24px;padding:16px 20px;
-  background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);
-  border-radius:14px;
+  margin-top:26px;padding:18px 22px;
+  background:var(--accent2-soft);border-left:2px solid var(--accent2);
 }
-.exp-result-icon{font-size:22px}
-.exp-result p{font-size:14.5px;font-weight:600;color:#86efac}
-.exp-result span{font-size:13px;color:var(--text3);display:block;margin-top:2px}
+.exp-result .r-num{font-family:'Source Serif 4',serif;font-size:19px;font-weight:600;color:var(--accent2)}
+.exp-result .r-detail{font-size:13px;color:var(--ink2);margin-top:4px}
+
+/* ─── MULTIMEDIA STRIP inside experience ─── */
+.media-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.media-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border:1px solid var(--line2);border-radius:999px;
+  font-size:12px;color:var(--ink2);font-weight:500;
+}
+.media-tag .ic{font-size:13px}
 
 /* ─── SKILLS ─── */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
-.skill-panel{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);
-  padding:28px;
+.skills-layout{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px}
+.skill-group{margin-bottom:30px}
+.skill-group:last-child{margin-bottom:0}
+.skill-group h4{
+  font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);
+  margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--accent);
+  display:inline-block;
 }
-.skill-panel h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px}
-.skill-item{margin-bottom:18px}
-.skill-item:last-child{margin-bottom:0}
-.skill-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
-.skill-name{font-size:14px;font-weight:500}
-.skill-pct{font-size:12px;color:var(--text3);font-weight:600}
-.skill-bar{height:4px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
-.skill-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.bar-row{margin-bottom:16px}
+.bar-row:last-child{margin-bottom:0}
+.bar-top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px}
+.bar-top .name{font-weight:500}
+.bar-top .pct{color:var(--ink3);font-family:'Source Serif 4',serif}
+.bar-track{height:3px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-fill.accent{background:var(--accent)}
 
-.tools-grid{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
-.tool-chip{
-  padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:500;
-  background:var(--surface2);border:1px solid var(--border);color:var(--text2);
-  transition:border-color .2s,color .2s;
-}
-.tool-chip:hover{border-color:var(--border2);color:var(--text)}
+.tool-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tool-tag{padding:7px 13px;background:var(--bg-soft);border:1px solid var(--line);font-size:12.5px;color:var(--ink2);border-radius:var(--r)}
 
-.edu-block{
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;
-  padding:18px 20px;margin-bottom:12px;
+.side-panel{background:var(--panel);border:1px solid var(--line);padding:26px}
+.side-panel + .side-panel{margin-top:20px}
+.side-panel h4{
+  font-size:15px;font-weight:700;margin-bottom:6px;position:relative;padding-left:13px;
 }
-.edu-block h4{font-size:15px;font-weight:700;margin-bottom:4px}
-.edu-block p{font-size:13.5px;color:var(--text3)}
+.side-panel h4::before{
+  content:'';position:absolute;left:0;top:3px;bottom:3px;width:3px;
+  background:var(--accent);border-radius:2px;
+}
+.side-panel p{font-size:13.5px;color:var(--ink2);line-height:1.65}
+.side-panel .tiny{font-size:12px;color:var(--ink3);margin-top:6px}
+
+/* ─── EQUIPMENT NOTE ─── */
+.equip-box{
+  border:1px solid var(--line2);padding:22px 24px;margin-top:24px;
+  display:flex;gap:16px;align-items:flex-start;background:var(--bg-soft);
+}
+.equip-box .e-ic{font-size:22px;flex-shrink:0;margin-top:1px}
+.equip-box h4{font-size:14px;font-weight:700;margin-bottom:5px;color:var(--accent2)}
+.equip-box p{font-size:13.5px;color:var(--ink2)}
 
 /* ─── CASE STUDIES ─── */
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
-.case{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);
-  padding:30px;transition:border-color .25s;
+.case{border-top:1px solid var(--line);padding:40px 0}
+.case:last-child{padding-bottom:0}
+.case-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:26px;flex-wrap:wrap}
+.case-head h3{font-family:'Source Serif 4',serif;font-size:23px;font-weight:600;position:relative;padding-left:16px}
+.case-head h3::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:4px;background:var(--accent2);border-radius:2px}
+.case-head .dom{font-size:13px;color:var(--ink3);margin-top:5px;padding-left:16px}
+.case-result{text-align:right}
+.case-result .num{font-family:'Source Serif 4',serif;font-size:30px;font-weight:600;color:var(--accent2)}
+.case-result .lbl{font-size:11.5px;color:var(--ink3);letter-spacing:0.04em;text-transform:uppercase}
+
+.case-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.case-col h5{
+  font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink);
+  margin-bottom:13px;display:flex;align-items:center;gap:8px;
 }
-.case:hover{border-color:var(--border2)}
-.case-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:12px}
-.case h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700}
-.case-domain{font-size:12px;color:var(--accent3);font-weight:600;margin-top:4px}
-.result-badge{
-  flex-shrink:0;padding:8px 14px;border-radius:12px;text-align:center;
-  background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);
-}
-.result-badge .num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#4ade80;line-height:1}
-.result-badge .lbl{font-size:10px;color:#86efac;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-top:3px}
-.case-divider{border:none;border-top:1px solid var(--border);margin:18px 0}
-.case-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:10px}
-.case ul{list-style:none;display:grid;gap:7px;margin-bottom:16px}
-.case ul li{font-size:13.5px;color:var(--text2);padding-left:18px;position:relative;line-height:1.55}
-.case ul li::before{content:'→';position:absolute;left:0;color:var(--text3);font-size:11px;top:3px}
-.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.metric-box{
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);
-  border-radius:12px;padding:14px 16px;
-}
-.metric-box .m-val{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--text)}
-.metric-box .m-lbl{font-size:11.5px;color:var(--text3);margin-top:3px}
+.case-col h5::before{content:'';width:14px;height:2px;background:var(--accent);border-radius:2px;flex-shrink:0}
+.case-col ul{list-style:none;display:grid;gap:8px}
+.case-col ul li{font-size:14px;color:var(--ink2);padding-left:16px;position:relative}
+.case-col ul li::before{content:'—';position:absolute;left:0;color:var(--ink3)}
+
+.case-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:28px;border:1px solid var(--line)}
+.cm-cell{background:var(--panel);padding:18px 16px}
+.cm-cell .v{font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;color:var(--ink)}
+.cm-cell .l{font-size:11.5px;color:var(--ink3);margin-top:4px}
 
 /* ─── CONTACT ─── */
-.contact-wrap{
-  background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(99,102,241,0.08));
-  border:1px solid rgba(59,130,246,0.2);border-radius:var(--r2);
-  padding:52px;text-align:center;
+.contact{background:var(--ink);color:var(--bg);padding:90px 0}
+.contact-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.contact h2{font-family:'Source Serif 4',serif;font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.01em;line-height:1.15;margin-bottom:20px}
+.contact h2 i{color:#d3a36a;font-style:italic;position:relative}
+.contact h2 i::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:rgba(211,163,106,0.4);border-radius:2px}
+.contact p{color:rgba(251,250,248,0.65);font-size:15.5px;max-width:480px}
+.contact-links{display:grid;gap:0;border-top:1px solid rgba(251,250,248,0.18)}
+.c-link{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 0;border-bottom:1px solid rgba(251,250,248,0.18);
+  font-size:15px;transition:.2s;
 }
-.contact-wrap h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;margin-bottom:14px;letter-spacing:-0.02em}
-.contact-wrap p{color:var(--text2);font-size:16px;max-width:620px;margin:0 auto 32px;line-height:1.75}
-.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.c-link:hover{padding-left:8px;color:#d3a36a}
+.c-link .arrow{font-size:14px;opacity:.5}
 
-/* ─── FOOTER ─── */
-footer{padding:28px 0;border-top:1px solid var(--border);text-align:center;font-size:13px;color:var(--text3)}
-footer span{color:var(--text2)}
+footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
 
-/* ─── ANIMATIONS ─── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-/* ─── RESPONSIVE ─── */
+/* ═══════════════ RESPONSIVE ═══════════════ */
+
+/* Tablet / small laptop */
 @media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr}
-  .exp-cols{grid-template-columns:1fr 1fr}
+  .wrap{width:min(var(--maxw),90%)}
+  .hero-body,.skills-layout,.contact-inner{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr;gap:16px}
+  .sec-title{padding-left:16px}
+  .exp-grid{grid-template-columns:1fr}
+  .exp-side{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .exp-side h3{font-size:20px;width:100%}
+  .exp-side .industry{border-top:none;padding-top:0;max-width:none;width:100%;font-size:12.5px}
+  .case-cols{grid-template-columns:1fr;gap:26px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .case-metrics{grid-template-columns:1fr 1fr}
 }
-@media(max-width:900px){
-  .pillars,.skills-grid,.cases{grid-template-columns:1fr}
-  .kpi-row{grid-template-columns:1fr 1fr}
+
+/* Tablet portrait / large phone */
+@media(max-width:860px){
+  .cap-grid{grid-template-columns:1fr 1fr}
+  .hero-top{grid-template-columns:1fr;align-items:flex-start;gap:18px}
+  .role-tag{text-align:left;display:flex;gap:8px;align-items:baseline}
+  .role-tag .r2{margin-top:0}
+  .role-tag .r2::before{content:'· '}
 }
+
+/* Mobile */
 @media(max-width:680px){
+  section{padding:56px 0}
+  .wrap{width:min(var(--maxw),88%)}
+
+  /* nav */
+  .nav-inner{height:56px}
   .nav-links{display:none}
-  .hero{padding:64px 0 48px}
-  .exp-header{grid-template-columns:1fr}
-  .exp-num{display:none}
-  .exp-cols{grid-template-columns:1fr}
+  .logo{font-size:16px}
+  .nav-cta{padding:7px 16px;font-size:12.5px}
+
+  /* hero */
+  .hero{padding:40px 0 36px}
+  .kicker{font-size:10.5px;margin-bottom:16px;gap:8px}
+  .kicker .line{width:20px}
+  .hero h1{line-height:1.15;max-width:none}
+  .hero-top{margin-bottom:30px}
+  .hero-desc{font-size:15.5px;margin-bottom:24px}
+  .hero-actions{gap:10px}
+  .btn{padding:12px 20px;font-size:13.5px;flex:1;justify-content:center}
+
+  /* stats */
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat-cell{padding:20px 16px;border-right:1px solid var(--line)}
+  .stat-cell:nth-child(2n){border-right:none}
+  .stat-cell:nth-child(n+3){border-bottom:none}
+  .stat-cell .num{font-size:24px}
+  .stat-cell .lbl{font-size:11px}
+
+  /* section heads */
+  .sec-head{margin-bottom:32px}
+  .sec-title{font-size:24px;padding-left:14px}
+  .sec-title::before{width:3px}
+  .sec-desc{font-size:14px}
+
+  /* capabilities */
+  .cap-grid{grid-template-columns:1fr;border-left:none}
+  .cap-cell{border-left:1px solid var(--line);padding:24px 18px}
+  .cap-cell h3{font-size:16px}
+
+  /* experience */
+  .exp-item{padding:32px 0}
+  .exp-side{margin-bottom:18px;padding-bottom:16px;gap:8px 14px}
+  .exp-side h3{font-size:18px}
+  .exp-block-title{font-size:11px}
+  .exp-block ul li{font-size:13.5px}
+  .exp-result{padding:14px 16px;margin-top:20px}
+  .exp-result .r-num{font-size:16px}
+  .media-tags{gap:6px}
+  .media-tag{font-size:11px;padding:5px 10px}
+
+  /* skills */
+  .skills-layout{gap:32px}
+  .skill-group{margin-bottom:26px}
+  .bar-row{margin-bottom:14px}
+  .side-panel{padding:20px}
+  .equip-box{padding:18px;flex-direction:column;gap:10px}
+
+  /* case studies */
+  .case{padding:30px 0}
+  .case-head{flex-direction:column;gap:14px}
+  .case-head h3{font-size:19px}
+  .case-result{text-align:left}
+  .case-result .num{font-size:26px}
+  .case-metrics{grid-template-columns:1fr 1fr;margin-top:22px}
+  .cm-cell{padding:14px 12px}
+  .cm-cell .v{font-size:17px}
+
+  /* contact */
+  .contact{padding:60px 0}
+  .contact-inner{gap:32px}
+  .c-link{padding:15px 0;font-size:14px}
+}
+
+/* Small phone */
+@media(max-width:460px){
+  .stats-row{grid-template-columns:1fr}
+  .stat-cell{border-right:none !important;border-bottom:1px solid var(--line) !important}
+  .stat-cell:last-child{border-bottom:none !important}
   .case-metrics{grid-template-columns:1fr}
-  .contact-wrap{padding:34px 24px}
-  .kpi-row{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .btn{flex:none;width:100%}
+  .info-row{font-size:12.5px}
+  .role-tag{flex-direction:column;align-items:flex-start;gap:2px}
+  .role-tag .r2::before{content:''}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════ NAV -->
+<!-- ═══════════════ NAV -->
 <nav>
   <div class="wrap nav-inner">
-    <div class="logo">Thạnh<em>.SEO</em></div>
+    <div class="logo">Phùng Đình Thạnh<span class="dot">.</span></div>
     <div class="nav-links">
-      <a href="#about">Về tôi</a>
+      <a href="#about">Giới thiệu</a>
       <a href="#experience">Kinh nghiệm</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#cases">Case Study</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="#skills">Năng lực</a>
+      <a href="#cases">Case study</a>
     </div>
-    <a href="#contact" class="nav-cta">Tuyển dụng tôi →</a>
+    <a href="#contact" class="nav-cta">Liên hệ</a>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════ HERO -->
+<!-- ═══════════════ HERO -->
 <section class="hero" id="about">
   <div class="wrap">
-    <div class="hero-grid">
+    <div class="hero-top reveal">
+      <div>
+        <div class="kicker"><span class="line"></span> SEO & Content Manager Portfolio</div>
+        <h1>Tăng trưởng organic traffic bằng chiến lược <i>SEO</i> và nội dung được sản xuất chuyên nghiệp.</h1>
+      </div>
+      <div class="role-tag">
+        <div class="r1">Phùng Đình Thạnh</div>
+        <div class="r2">TP. Hồ Chí Minh, Việt Nam</div>
+      </div>
+    </div>
 
+    <div class="hero-body">
       <div class="reveal">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Sẵn sàng cơ hội mới · SEO &amp; Content Manager
-        </div>
-        <h1 class="display">
-          Phùng Đình<br><span class="name-accent">Thạnh</span>
-        </h1>
         <p class="hero-desc">
-          Chuyên gia SEO thực chiến với định hướng tăng trưởng dài hạn — từ kiến trúc kỹ thuật,
-          tối ưu onpage, xây dựng entity đến chiến lược nội dung đa kênh. Không theo đuổi traffic ảo,
-          mà tập trung vào qualified organic traffic tạo ra chuyển đổi thật.
+          Tôi xây dựng chiến lược SEO tổng thể — từ <strong>technical audit, content cluster đến entity &amp; link building</strong> —
+          và trực tiếp sản xuất nội dung đa nền tảng bằng <strong>công cụ AI, dựng video và chụp ảnh sản phẩm</strong>
+          để mỗi chiến dịch không chỉ lên top mà còn truyền tải đúng thông điệp thương hiệu.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            Liên hệ hợp tác
-          </a>
-          <a href="#cases" class="btn btn-ghost">Xem Case Study →</a>
-        </div>
-
-        <div class="kpi-row">
-          <div class="kpi">
-            <div class="kpi-label">Tổng kinh nghiệm</div>
-            <div class="kpi-val">3+ năm</div>
-            <div class="kpi-sub">SEO · Content · Growth</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Traffic tăng trưởng cao nhất</div>
-            <div class="kpi-val">+500%</div>
-            <div class="kpi-sub">Từ 1.000 → 6.000 / tháng</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Mục tiêu vị trí</div>
-            <div class="kpi-val">Senior SEO</div>
-            <div class="kpi-sub">SEO Leader / Strategy</div>
-          </div>
+          <a href="#contact" class="btn btn-dark">Liên hệ hợp tác</a>
+          <a href="#cases" class="btn btn-line">Xem case study</a>
         </div>
       </div>
 
-      <div class="profile-card reveal">
-        <div class="avatar">PĐT</div>
-        <div class="profile-name">Phùng Đình Thạnh</div>
-        <div class="profile-title">SEO &amp; Content Manager</div>
-
-        <div class="profile-row">
-          <span class="profile-row-label">Ngày sinh</span>
-          <span class="profile-row-val">12 / 02 / 2000</span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row-label">Email</span>
-          <span class="profile-row-val"><a href="mailto:pdt1302@gmail.com">pdt1302@gmail.com</a></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row-label">Điện thoại</span>
-          <span class="profile-row-val"><a href="tel:0888881265">0888881265</a></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row-label">Địa chỉ</span>
-          <span class="profile-row-val">566 Dương Quảng Hàm, P.5, Q.Gò Vấp, TP.HCM</span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row-label">Facebook</span>
-          <span class="profile-row-val"><a href="https://facebook.com/dyntane" target="_blank">fb.com/dyntane</a></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row-label">Học vấn</span>
-          <span class="profile-row-val">Cao Đẳng Văn Lang · 2018–2021</span>
-        </div>
-
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          Đang tìm kiếm cơ hội phù hợp
+      <div class="reveal">
+        <div class="info-list">
+          <div class="info-row"><span class="k">Ngày sinh</span><span class="v">12/02/2000</span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v"><a href="mailto:pdt1302@gmail.com">pdt1302@gmail.com</a></span></div>
+          <div class="info-row"><span class="k">Điện thoại</span><span class="v"><a href="tel:0888881265">0888 881 265</a></span></div>
+          <div class="info-row"><span class="k">Địa chỉ</span><span class="v">P.5, Q.Gò Vấp, TP.HCM</span></div>
+          <div class="info-row"><span class="k">Facebook</span><span class="v"><a href="https://facebook.com/dyntane" target="_blank">fb.com/dyntane</a></span></div>
+          <div class="info-row"><span class="k">Học vấn</span><span class="v">Cao Đẳng Văn Lang</span></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ PILLARS -->
-<section class="alt">
+<!-- ═══════════════ STATS -->
+<div class="stats-strip">
   <div class="wrap">
-    <div class="pillars">
-      <div class="pillar reveal">
-        <div class="pillar-icon blue">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        </div>
+    <div class="stats-row">
+      <div class="stat-cell reveal">
+        <div class="num">3+</div>
+        <div class="lbl">Năm kinh nghiệm SEO &amp; Content</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="num">+500%</div>
+        <div class="lbl">Tăng trưởng organic traffic cao nhất ghi nhận</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="num">3</div>
+        <div class="lbl">Ngành đã triển khai: B2B, E-commerce, Logistics</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="num">360°</div>
+        <div class="lbl">Quy trình: chiến lược → nội dung → sản xuất media</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CAPABILITIES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01 <span></span></div>
+      <div>
+        <h2 class="sec-title">Năng lực cốt lõi</h2>
+        <p class="sec-desc">Ba trụ cột tạo nên một chiến lược SEO bền vững — kỹ thuật vững, nội dung đúng intent và năng lực sản xuất media hỗ trợ trực tiếp cho chiến dịch.</p>
+      </div>
+    </div>
+
+    <div class="cap-grid reveal">
+      <div class="cap-cell">
+        <div class="idx">01</div>
         <h3>Chiến lược SEO tổng thể</h3>
-        <p>Xây dựng lộ trình SEO bài bản từ audit kỹ thuật, phân tích đối thủ, nghiên cứu từ khóa theo cluster, đến lên kế hoạch nội dung và phân bổ ngân sách link building — mọi quyết định đều dựa trên dữ liệu.</p>
+        <p>Audit kỹ thuật, nghiên cứu từ khóa theo cluster, phân tích đối thủ và lên roadmap SEO theo từng giai đoạn tăng trưởng — mọi quyết định đều bám theo dữ liệu thực.</p>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-icon purple">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-        </div>
+      <div class="cap-cell">
+        <div class="idx">02</div>
         <h3>Technical SEO &amp; Core Web Vitals</h3>
-        <p>Từ crawl budget, log file analysis, cấu trúc URL, schema markup đến tối ưu LCP, FID, CLS — xây dựng nền tảng kỹ thuật sạch để Google index và xếp hạng nội dung hiệu quả nhất.</p>
+        <p>Xử lý crawl budget, cấu trúc URL, schema markup, tối ưu LCP/CLS/FID — đảm bảo nền tảng kỹ thuật sạch để nội dung có cơ hội xếp hạng tốt nhất.</p>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-icon cyan">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-        </div>
-        <h3>Content SEO &amp; Topical Authority</h3>
-        <p>Xây dựng hệ thống content cluster theo topic, tối ưu từng bài theo search intent, triển khai entity và internal link để website đạt topical authority bền vững — không phụ thuộc vào một vài từ khóa đơn lẻ.</p>
+      <div class="cap-cell">
+        <div class="idx">03</div>
+        <h3>Content Strategy &amp; Topical Authority</h3>
+        <p>Xây dựng content pillar, content cluster và internal linking theo topic để website đạt độ uy tín chuyên môn (E-E-A-T) bền vững trong mắt Google.</p>
+      </div>
+      <div class="cap-cell">
+        <div class="idx">04</div>
+        <h3>Ứng dụng AI vào content production</h3>
+        <p>Dùng công cụ AI để rút ngắn thời gian research, brief content, tạo dàn ý chuẩn SEO và hỗ trợ biên tập — tăng tốc độ sản xuất mà vẫn giữ chất lượng và giọng văn thương hiệu.</p>
+      </div>
+      <div class="cap-cell">
+        <div class="idx">05</div>
+        <h3>Quay dựng video sản phẩm &amp; thương hiệu</h3>
+        <p>Trực tiếp quay và edit video ngắn cho landing page, social và quảng cáo — đảm bảo nội dung hình ảnh đồng bộ với chiến lược SEO và thông điệp truyền thông.</p>
+      </div>
+      <div class="cap-cell">
+        <div class="idx">06</div>
+        <h3>Chụp ảnh sản phẩm chuyên nghiệp</h3>
+        <p>Tự trang bị thiết bị chụp sản phẩm chuyên dụng, đảm bảo hình ảnh chuẩn ánh sáng, bố cục và đồng nhất thương hiệu cho website, landing page và catalogue.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ EXPERIENCE -->
-<section id="experience">
+<!-- ═══════════════ EXPERIENCE -->
+<section class="reveal" id="experience" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-label reveal"><span>Work Experience</span></div>
-    <h2 class="section-title reveal">Kinh nghiệm làm việc</h2>
-    <p class="section-desc reveal">Hành trình SEO qua 3 mô hình ngành khác nhau: B2B thiết bị công nghiệp, thương mại điện tử hàng công nghệ và dịch vụ logistics — mỗi dự án là một bài toán tăng trưởng unique.</p>
-
-    <div class="exp-list">
-
-      <!-- EXP 01 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <div class="exp-num">01</div>
-          <div>
-            <div class="exp-company">Tân Thành Phát</div>
-            <div class="exp-role">SEO &amp; Content Manager</div>
-            <div class="exp-meta">
-              <span class="tag tag-time">2022 – 2024</span>
-              <span class="tag tag-type">B2B · Thiết bị &amp; dụng cụ</span>
-              <span class="tag tag-time">Full-time</span>
-            </div>
-          </div>
-        </div>
-        <div class="exp-body">
-          <img
-            src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635620705905_cc71f478fc6ba1bd3647e91ba91c4c9a.webp"
-            alt="Kết quả SEO tại Tân Thành Phát"
-            class="exp-img"
-          />
-          <div class="exp-cols">
-            <div class="exp-col">
-              <h4>Technical SEO</h4>
-              <ul>
-                <li>Audit kỹ thuật toàn diện: crawl, index, canonical, duplicate content</li>
-                <li>Thiết lập redirect 301 đúng luồng, xử lý URL cũ</li>
-                <li>Tối ưu Pagespeed, Core Web Vitals (LCP, CLS, FID)</li>
-                <li>Triển khai Schema Markup: Product, BreadcrumbList, FAQ</li>
-                <li>Sửa lỗi robots.txt và XML sitemap</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Onpage &amp; Content</h4>
-              <ul>
-                <li>Keyword research chuyên sâu, phân tích search intent từng nhóm</li>
-                <li>Xây dựng content pillar và content cluster theo topic</li>
-                <li>Tối ưu title, meta description, heading hierarchy, internal link</li>
-                <li>Viết lại toàn bộ nội dung sản phẩm và trang danh mục</li>
-                <li>Phát triển blog SEO với bài viết dài 2.000+ từ</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Authority &amp; Measurement</h4>
-              <ul>
-                <li>Xây dựng hệ thống backlink: Guest Post, Entity, PR báo</li>
-                <li>Tối ưu Google Business Profile và local SEO</li>
-                <li>Tracking GSC: CTR, Impressions, average position</li>
-                <li>Phân tích GA4: session, bounce rate, conversion path</li>
-                <li>Báo cáo hiệu quả SEO định kỳ theo tháng</li>
-              </ul>
-            </div>
-          </div>
-          <div class="exp-result">
-            <div class="exp-result-icon">📈</div>
-            <div>
-              <p>Traffic organic tăng từ 800 → 3.000 lượt/tháng trong vòng 3 tháng (+275%)</p>
-              <span>Cải thiện Pagespeed từ 38 → 87 điểm · 15+ từ khóa top 3 Google</span>
-            </div>
-          </div>
-        </div>
+    <div class="sec-head">
+      <div class="sec-num">02 <span></span></div>
+      <div>
+        <h2 class="sec-title">Kinh nghiệm làm việc</h2>
+        <p class="sec-desc">Ba dự án qua ba mô hình kinh doanh khác nhau — mỗi nơi đòi hỏi cách tiếp cận SEO và sản xuất nội dung riêng.</p>
       </div>
-
-      <!-- EXP 02 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <div class="exp-num">02</div>
-          <div>
-            <div class="exp-company">Tiến Trần Mobile</div>
-            <div class="exp-role">SEO &amp; Content Manager</div>
-            <div class="exp-meta">
-              <span class="tag tag-time">2024 – 2025</span>
-              <span class="tag tag-type">E-commerce · Điện thoại &amp; công nghệ</span>
-              <span class="tag tag-time">Online</span>
-            </div>
-          </div>
-        </div>
-        <div class="exp-body">
-          <img
-            src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635722852653_b1fc0616684086806a372bf9460e84b6.jpg"
-            alt="Kết quả SEO tại Tiến Trần Mobile"
-            class="exp-img"
-          />
-          <div class="exp-cols">
-            <div class="exp-col">
-              <h4>Technical SEO</h4>
-              <ul>
-                <li>Audit định kỳ theo ba trục: Technical · Content · UX</li>
-                <li>Fix crawl error, broken link, duplicate page, index sai</li>
-                <li>Tối ưu Health Score lên 90+ trên Ahrefs Site Audit</li>
-                <li>Tối ưu Pagespeed và Core Web Vitals cho mobile-first</li>
-                <li>Chuẩn hoá redirect 301, làm sạch redirect chain</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Content &amp; Keyword Strategy</h4>
-              <ul>
-                <li>Nghiên cứu từ khóa bằng Ahrefs, xây dựng content cluster</li>
-                <li>Triển khai content SEO cho: blog · trang sản phẩm · landing page</li>
-                <li>Tối ưu internal link, tăng thời gian onsite và giảm bounce rate</li>
-                <li>Tái cơ cấu hệ thống danh mục và URL sản phẩm</li>
-                <li>Tối ưu mô tả sản phẩm theo search intent người dùng</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Authority &amp; Conversion</h4>
-              <ul>
-                <li>Xây dựng backlink profile: Guest Post, Entity, Tier 2</li>
-                <li>Tối ưu CTA và bố cục landing page để tăng tỷ lệ chuyển đổi</li>
-                <li>Phân tích funnel: từ organic session → lead → khách hàng</li>
-                <li>Tracking GSC &amp; GA4: CTR, position, user behavior</li>
-                <li>A/B test title tag và meta description theo nhóm danh mục</li>
-              </ul>
-            </div>
-          </div>
-          <div class="exp-result">
-            <div class="exp-result-icon">🚀</div>
-            <div>
-              <p>Traffic organic tăng từ 1.000 → 6.000 lượt/tháng trong 4 tháng (+500%)</p>
-              <span>Bounce rate giảm 34% · Thời gian onsite tăng 2.1 phút · CTR tăng 18%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EXP 03 -->
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <div class="exp-num">03</div>
-          <div>
-            <div class="exp-company">Vận Chuyển Phùng Quân</div>
-            <div class="exp-role">SEO &amp; Content Manager</div>
-            <div class="exp-meta">
-              <span class="tag tag-time">2025 – 01/2026</span>
-              <span class="tag tag-type">Dịch vụ · Vận chuyển &amp; logistics</span>
-              <span class="tag tag-time">Online</span>
-            </div>
-          </div>
-        </div>
-        <div class="exp-body">
-          <img
-            src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635743207336_fa6817641e26750dbf12ba0f9427ee96.jpg"
-            alt="Kết quả SEO tại Vận Chuyển Phùng Quân"
-            class="exp-img"
-          />
-          <div class="exp-cols">
-            <div class="exp-col">
-              <h4>UX &amp; Technical</h4>
-              <ul>
-                <li>Cải thiện UX/UI website để tăng thời gian onsite và giảm bounce rate</li>
-                <li>Fix lỗi sitemap, robots.txt và cấu trúc crawl</li>
-                <li>Thiết lập redirect, tối ưu cấu trúc URL thân thiện với SEO</li>
-                <li>Triển khai Local SEO và tối ưu Google Business Profile</li>
-                <li>Cải thiện mobile UX và tối ưu tốc độ tải trang</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Content Strategy</h4>
-              <ul>
-                <li>Xây dựng content cluster theo từ khóa dịch vụ vận chuyển</li>
-                <li>Phát triển nội dung theo search intent: vận chuyển, chuyển nhà, logistics</li>
-                <li>Tối ưu landing page dịch vụ theo hành trình chuyển đổi</li>
-                <li>Triển khai content marketing đa kênh: blog, social, PR</li>
-                <li>Xây dựng FAQ schema để chiếm thêm SERP features</li>
-              </ul>
-            </div>
-            <div class="exp-col">
-              <h4>Authority &amp; Growth</h4>
-              <ul>
-                <li>Xây dựng entity và backlink profile cho domain mới</li>
-                <li>Triển khai Guest Post và PR báo ngành logistics</li>
-                <li>Tối ưu hành trình chuyển đổi từ organic → lead</li>
-                <li>Tracking và đo lường hiệu quả SEO theo KPI tháng</li>
-                <li>Phân tích competitor gap để khai thác cơ hội từ khóa</li>
-              </ul>
-            </div>
-          </div>
-          <div class="exp-result">
-            <div class="exp-result-icon">🎯</div>
-            <div>
-              <p>Xây dựng organic channel từ 0 — website đạt top 10 cho 20+ từ khóa dịch vụ trong 3 tháng</p>
-              <span>Domain Authority tăng từ 0 → DR 18 · Local pack top 3 cho từ khóa khu vực</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- EXP 01 -->
+    <div class="exp-item">
+      <div class="exp-grid">
+        <div class="exp-side">
+          <div class="yr">2022 — 2024</div>
+          <h3>Tân Thành Phát</h3>
+          <div class="role">SEO &amp; Content Manager</div>
+          <div class="industry">B2B · Thiết bị &amp; dụng cụ công nghiệp<br>Full-time</div>
+        </div>
+        <div>
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635620705905_cc71f478fc6ba1bd3647e91ba91c4c9a.webp" alt="Kết quả SEO tại Tân Thành Phát" class="exp-img" />
+
+          <div class="exp-block">
+            <div class="exp-block-title">Technical &amp; Onpage</div>
+            <ul>
+              <li>Audit kỹ thuật toàn diện: crawl, index, canonical, duplicate content</li>
+              <li>Triển khai redirect 301 đúng luồng, tối ưu Pagespeed và Core Web Vitals</li>
+              <li>Schema markup cho Product, Breadcrumb, FAQ trên toàn site</li>
+              <li>Keyword research và xây content cluster theo từng dòng sản phẩm</li>
+            </ul>
+          </div>
+          <div class="exp-block">
+            <div class="exp-block-title">Content &amp; Media Production</div>
+            <ul>
+              <li>Viết lại toàn bộ nội dung sản phẩm và blog theo đúng search intent</li>
+              <li>Dùng AI hỗ trợ research chủ đề, lên dàn ý và rút ngắn thời gian biên tập</li>
+              <li>Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng để thay ảnh stock</li>
+              <li>Xây dựng hệ thống backlink, entity và guest post cho domain</li>
+            </ul>
+          </div>
+
+          <div class="exp-result">
+            <div class="r-num">800 → 3.000 lượt/tháng (+275%)</div>
+            <div class="r-detail">Pagespeed cải thiện từ 38 → 87 điểm · 15+ từ khóa lên Top 3 Google</div>
+          </div>
+
+          <div class="media-tags">
+            <span class="media-tag"><span class="ic">◆</span> Technical SEO</span>
+            <span class="media-tag"><span class="ic">◆</span> Content Cluster</span>
+            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
+            <span class="media-tag"><span class="ic">◆</span> AI content support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXP 02 -->
+    <div class="exp-item">
+      <div class="exp-grid">
+        <div class="exp-side">
+          <div class="yr">2024 — 2025</div>
+          <h3>Tiến Trần Mobile</h3>
+          <div class="role">SEO &amp; Content Manager</div>
+          <div class="industry">E-commerce · Điện thoại &amp; công nghệ<br>Online</div>
+        </div>
+        <div>
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635722852653_b1fc0616684086806a372bf9460e84b6.jpg" alt="Kết quả SEO tại Tiến Trần Mobile" class="exp-img" />
+
+          <div class="exp-block">
+            <div class="exp-block-title">Technical &amp; Onpage</div>
+            <ul>
+              <li>Audit định kỳ theo ba trục: Technical · Content · UX</li>
+              <li>Fix crawl error, duplicate page, làm sạch redirect chain</li>
+              <li>Tối ưu Health Score lên 90+ trên công cụ audit, cải thiện mobile UX</li>
+              <li>Nghiên cứu từ khóa và xây content cluster cho từng nhóm sản phẩm</li>
+            </ul>
+          </div>
+          <div class="exp-block">
+            <div class="exp-block-title">Content &amp; Media Production</div>
+            <ul>
+              <li>Quay và edit video review, unbox sản phẩm cho landing page và social</li>
+              <li>Chụp ảnh sản phẩm chuyên dụng thay thế ảnh nhà cung cấp để tăng độ tin cậy</li>
+              <li>Dùng AI hỗ trợ viết mô tả sản phẩm hàng loạt, đảm bảo nhất quán giọng văn</li>
+              <li>Tối ưu CTA và bố cục landing page để tăng tỷ lệ chuyển đổi</li>
+            </ul>
+          </div>
+
+          <div class="exp-result">
+            <div class="r-num">1.000 → 6.000 lượt/tháng (+500%)</div>
+            <div class="r-detail">Bounce rate giảm 34% · Thời gian onsite tăng 2.1 phút · CTR tăng 18%</div>
+          </div>
+
+          <div class="media-tags">
+            <span class="media-tag"><span class="ic">◆</span> Quay &amp; edit video</span>
+            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
+            <span class="media-tag"><span class="ic">◆</span> AI content support</span>
+            <span class="media-tag"><span class="ic">◆</span> CRO &amp; Landing page</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXP 03 -->
+    <div class="exp-item">
+      <div class="exp-grid">
+        <div class="exp-side">
+          <div class="yr">2025 — 01/2026</div>
+          <h3>Vận Chuyển Phùng Quân</h3>
+          <div class="role">SEO &amp; Content Manager</div>
+          <div class="industry">Dịch vụ · Vận chuyển &amp; logistics<br>Online</div>
+        </div>
+        <div>
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635743207336_fa6817641e26750dbf12ba0f9427ee96.jpg" alt="Kết quả SEO tại Vận Chuyển Phùng Quân" class="exp-img" />
+
+          <div class="exp-block">
+            <div class="exp-block-title">Technical &amp; Onpage</div>
+            <ul>
+              <li>Cải thiện UX/UI website, sửa lỗi sitemap, robots.txt và cấu trúc crawl</li>
+              <li>Triển khai Local SEO, tối ưu Google Business Profile và schema FAQ</li>
+              <li>Xây dựng entity và backlink profile cho domain mới hoàn toàn</li>
+            </ul>
+          </div>
+          <div class="exp-block">
+            <div class="exp-block-title">Content &amp; Media Production</div>
+            <ul>
+              <li>Quay video giới thiệu dịch vụ vận chuyển, chuyển nhà cho kênh social</li>
+              <li>Chụp ảnh thực tế đội xe, kho bãi và quy trình vận chuyển bằng thiết bị chuyên dụng</li>
+              <li>Dùng AI hỗ trợ lên kế hoạch content theo mùa vụ và search intent dịch vụ</li>
+              <li>Triển khai content marketing đa kênh: blog, social, PR ngành logistics</li>
+            </ul>
+          </div>
+
+          <div class="exp-result">
+            <div class="r-num">Top 10 cho 20+ từ khóa dịch vụ trong 3 tháng</div>
+            <div class="r-detail">Domain Authority tăng từ 0 → DR 18 · Local pack Top 3 khu vực</div>
+          </div>
+
+          <div class="media-tags">
+            <span class="media-tag"><span class="ic">◆</span> Local SEO</span>
+            <span class="media-tag"><span class="ic">◆</span> Quay video dịch vụ</span>
+            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh thực tế</span>
+            <span class="media-tag"><span class="ic">◆</span> AI content planning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ SKILLS -->
-<section class="alt" id="skills">
+<!-- ═══════════════ SKILLS -->
+<section id="skills">
   <div class="wrap">
-    <div class="section-label reveal"><span>Skills &amp; Education</span></div>
-    <h2 class="section-title reveal">Kỹ năng &amp; Học vấn</h2>
-    <p class="section-desc reveal">Bộ kỹ năng xây dựng qua thực chiến, không phải lý thuyết — từ technical audit đến content strategy và data analysis.</p>
+    <div class="sec-head reveal">
+      <div class="sec-num">03 <span></span></div>
+      <div>
+        <h2 class="sec-title">Năng lực chuyên môn</h2>
+        <p class="sec-desc">Bộ kỹ năng SEO làm trọng tâm, mở rộng thêm năng lực sản xuất nội dung để chủ động toàn bộ quy trình content.</p>
+      </div>
+    </div>
 
-    <div class="skills-grid">
-
-      <div class="skill-panel reveal">
-        <h3>Kỹ năng chuyên môn</h3>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">SEO Onpage &amp; Technical</span><span class="skill-pct">92%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">Keyword Research &amp; Content Strategy</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">Link Building &amp; Entity SEO</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">Data Analysis (GSC &amp; GA4)</span><span class="skill-pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">UX Optimization &amp; CRO</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-info"><span class="skill-name">Content Writing &amp; Copywriting</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+    <div class="skills-layout reveal">
+      <div>
+        <div class="skill-group">
+          <h4>SEO &amp; Chiến lược</h4>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">SEO Onpage &amp; Technical</span><span class="pct">92%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Keyword Research &amp; Content Strategy</span><span class="pct">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Link Building &amp; Entity SEO</span><span class="pct">85%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Data Analysis (GSC &amp; GA4)</span><span class="pct">82%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          </div>
         </div>
 
-        <h3 style="margin-top:28px;margin-bottom:14px">Công cụ sử dụng</h3>
-        <div class="tools-grid">
-          <span class="tool-chip">Google Search Console</span>
-          <span class="tool-chip">Google Analytics 4</span>
-          <span class="tool-chip">Ahrefs</span>
-          <span class="tool-chip">Screaming Frog</span>
-          <span class="tool-chip">Google PageSpeed Insights</span>
-          <span class="tool-chip">Search Intent Analysis</span>
-          <span class="tool-chip">Schema Markup</span>
-          <span class="tool-chip">Keyword Clustering</span>
-          <span class="tool-chip">Log File Analysis</span>
-          <span class="tool-chip">WordPress / WooCommerce</span>
-          <span class="tool-chip">Google Tag Manager</span>
-          <span class="tool-chip">Canva</span>
+        <div class="skill-group">
+          <h4>Content Production bổ trợ</h4>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Ứng dụng AI vào content workflow</span><span class="pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill accent" style="width:80%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Quay &amp; chỉnh sửa video sản phẩm</span><span class="pct">75%</span></div>
+            <div class="bar-track"><div class="bar-fill accent" style="width:75%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">Chụp ảnh sản phẩm chuyên dụng</span><span class="pct">78%</span></div>
+            <div class="bar-track"><div class="bar-fill accent" style="width:78%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-top"><span class="name">UX Optimization &amp; CRO</span><span class="pct">75%</span></div>
+            <div class="bar-track"><div class="bar-fill accent" style="width:75%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Công cụ sử dụng</h4>
+          <div class="tool-tags">
+            <span class="tool-tag">Google Search Console</span>
+            <span class="tool-tag">Google Analytics 4</span>
+            <span class="tool-tag">Ahrefs</span>
+            <span class="tool-tag">Screaming Frog</span>
+            <span class="tool-tag">ChatGPT / Gemini cho content</span>
+            <span class="tool-tag">Capcut / Premiere cơ bản</span>
+            <span class="tool-tag">Lightroom</span>
+            <span class="tool-tag">Schema Markup</span>
+            <span class="tool-tag">Google Tag Manager</span>
+            <span class="tool-tag">Canva</span>
+          </div>
+        </div>
+
+        <div class="equip-box">
+          <div class="e-ic">📷</div>
+          <div>
+            <h4>Thiết bị chụp sản phẩm sẵn có</h4>
+            <p>Tự trang bị bộ thiết bị chụp ảnh sản phẩm chuyên dụng (đèn, phông, máy ảnh) — chủ động sản xuất hình ảnh thương hiệu mà không cần phụ thuộc bên thứ ba, tiết kiệm thời gian và chi phí cho doanh nghiệp.</p>
+          </div>
         </div>
       </div>
 
-      <div class="skill-panel reveal">
-        <h3>Học vấn &amp; Định hướng</h3>
-
-        <div class="edu-block">
-          <h4>Cao Đẳng Văn Lang</h4>
-          <p>2018 – 2021 · TP. Hồ Chí Minh</p>
+      <div>
+        <div class="side-panel">
+          <h4>Học vấn</h4>
+          <p>Cao Đẳng Văn Lang · 2018 – 2021</p>
+          <p class="tiny">TP. Hồ Chí Minh</p>
         </div>
-
-        <div class="edu-block">
+        <div class="side-panel">
           <h4>Mục tiêu nghề nghiệp</h4>
-          <p>Phát triển lên vị trí Senior SEO Specialist hoặc SEO Lead — dẫn dắt chiến lược SEO tổng thể cho doanh nghiệp với tư duy data-driven, scalable content system và tăng trưởng bền vững.</p>
+          <p>Phát triển lên vị trí Senior SEO Specialist hoặc SEO Lead, dẫn dắt chiến lược SEO tổng thể với khả năng chủ động toàn bộ quy trình content — từ chiến lược, viết bài đến sản xuất hình ảnh/video.</p>
         </div>
-
-        <div class="edu-block">
+        <div class="side-panel">
           <h4>Phương pháp làm việc</h4>
-          <p>Luôn bắt đầu bằng audit để hiểu bức tranh tổng thể trước khi triển khai. Ưu tiên fix nền tảng kỹ thuật trước, sau đó xây dựng content và authority song song.</p>
+          <p>Audit trước, fix nền tảng kỹ thuật, sau đó triển khai content và authority song song. Tận dụng AI để tăng tốc độ nhưng vẫn kiểm soát chất lượng và giọng văn thương hiệu.</p>
         </div>
-
-        <div class="edu-block">
-          <h4>Điểm mạnh cốt lõi</h4>
-          <p>Tư duy hệ thống, giao tiếp hiệu quả với stakeholders, bám sát KPI và liên tục tối ưu dựa trên dữ liệu thực — không làm SEO theo cảm tính.</p>
-        </div>
-
-        <div class="edu-block">
-          <h4>Sở thích &amp; Phong cách sống</h4>
-          <p>Bơi lội · Đá banh · Đọc sách về growth marketing và product thinking</p>
+        <div class="side-panel">
+          <h4>Sở thích</h4>
+          <p>Bơi lội · Đá banh · Nhiếp ảnh sản phẩm</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ CASE STUDIES -->
-<section id="cases">
+<!-- ═══════════════ CASE STUDIES -->
+<section id="cases" style="background:var(--bg-soft);border-top:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-label reveal"><span>Case Studies</span></div>
-    <h2 class="section-title reveal">Dự án tiêu biểu</h2>
-    <p class="section-desc reveal">Hai case study thực tế có số liệu minh chứng — từ vấn đề cụ thể, giải pháp triển khai đến kết quả đo lường được.</p>
+    <div class="sec-head reveal">
+      <div class="sec-num">04 <span></span></div>
+      <div>
+        <h2 class="sec-title">Case study tiêu biểu</h2>
+        <p class="sec-desc">Hai dự án với số liệu minh chứng cụ thể — từ vấn đề, giải pháp triển khai đến kết quả đo lường được.</p>
+      </div>
+    </div>
 
-    <div class="cases">
-
+    <div class="reveal">
       <!-- CASE 1 -->
-      <div class="case reveal">
-        <div class="case-top">
+      <div class="case">
+        <div class="case-head">
           <div>
-            <h3>SEO Tân Thành Phát</h3>
-            <div class="case-domain">tanthanhtphat.com · B2B Thiết bị công nghiệp</div>
+            <h3>SEO &amp; Content — Tân Thành Phát</h3>
+            <div class="dom">B2B Thiết bị công nghiệp</div>
           </div>
-          <div class="result-badge">
+          <div class="case-result">
             <div class="num">+275%</div>
-            <div class="lbl">Traffic</div>
+            <div class="lbl">Organic traffic</div>
           </div>
         </div>
 
-        <div class="case-section-title">Vấn đề khi tiếp nhận</div>
-        <ul>
-          <li>Website lỗi giao diện, Pagespeed chỉ đạt 38/100</li>
-          <li>Cấu trúc site rời rạc, thiếu hoàn toàn internal link</li>
-          <li>Nội dung không có keyword, viết theo kiểu mô tả sản phẩm cũ</li>
-          <li>Lỗi kỹ thuật nghiêm trọng: canonical sai, duplicate content, index lộn xộn</li>
-          <li>Không có backlink, domain authority gần như bằng 0</li>
-        </ul>
-
-        <hr class="case-divider" />
-
-        <div class="case-section-title">Giải pháp triển khai</div>
-        <ul>
-          <li>Full technical audit → fix 47 lỗi kỹ thuật ưu tiên theo mức độ ảnh hưởng</li>
-          <li>Tái thiết kế cấu trúc website và hệ thống internal link theo silo</li>
-          <li>Keyword research 200+ từ khóa, xây content cluster 3 cấp</li>
-          <li>Viết lại 80+ trang nội dung theo đúng search intent từng nhóm từ khóa</li>
-          <li>Triển khai schema Product, BreadcrumbList, FAQ trên toàn site</li>
-          <li>Tối ưu Pagespeed: lazy load, image compression, minify CSS/JS</li>
-          <li>Xây dựng 15 guest post và thiết lập entity cho brand</li>
-        </ul>
+        <div class="case-cols">
+          <div class="case-col">
+            <h5>Vấn đề ban đầu</h5>
+            <ul>
+              <li>Pagespeed chỉ đạt 38/100, cấu trúc site rời rạc</li>
+              <li>Nội dung không có keyword, ảnh sản phẩm dùng ảnh nhà cung cấp</li>
+              <li>Lỗi canonical, duplicate content, index lộn xộn</li>
+              <li>Domain authority gần như bằng 0, không có backlink</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h5>Giải pháp triển khai</h5>
+            <ul>
+              <li>Audit kỹ thuật toàn diện, fix 47 lỗi theo mức độ ưu tiên</li>
+              <li>Viết lại 80+ trang nội dung theo đúng search intent</li>
+              <li>Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng</li>
+              <li>Xây 15 guest post và thiết lập entity cho brand</li>
+            </ul>
+          </div>
+        </div>
 
         <div class="case-metrics">
-          <div class="metric-box">
-            <div class="m-val" style="color:#4ade80">800 → 3.000</div>
-            <div class="m-lbl">Organic traffic / tháng (3 tháng)</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#60a5fa">38 → 87</div>
-            <div class="m-lbl">Pagespeed Score</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#a5b4fc">15+</div>
-            <div class="m-lbl">Từ khóa đạt Top 3 Google</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#67e8f9">47</div>
-            <div class="m-lbl">Lỗi technical đã fix</div>
-          </div>
+          <div class="cm-cell"><div class="v">800 → 3.000</div><div class="l">Traffic / tháng (3 tháng)</div></div>
+          <div class="cm-cell"><div class="v">38 → 87</div><div class="l">Pagespeed score</div></div>
+          <div class="cm-cell"><div class="v">15+</div><div class="l">Từ khóa Top 3</div></div>
+          <div class="cm-cell"><div class="v">47</div><div class="l">Lỗi technical đã fix</div></div>
         </div>
       </div>
 
       <!-- CASE 2 -->
-      <div class="case reveal">
-        <div class="case-top">
+      <div class="case">
+        <div class="case-head">
           <div>
-            <h3>SEO Tiến Trần Mobile</h3>
-            <div class="case-domain">tientranmobile.com · E-commerce công nghệ</div>
+            <h3>SEO &amp; Content — Tiến Trần Mobile</h3>
+            <div class="dom">E-commerce công nghệ</div>
           </div>
-          <div class="result-badge">
+          <div class="case-result">
             <div class="num">+500%</div>
-            <div class="lbl">Traffic</div>
+            <div class="lbl">Organic traffic</div>
           </div>
         </div>
 
-        <div class="case-section-title">Vấn đề khi tiếp nhận</div>
-        <ul>
-          <li>Thiếu sản phẩm và nội dung — không phủ được từ khóa target</li>
-          <li>UX/UI kém: bounce rate cao, thời gian onsite thấp dưới 1 phút</li>
-          <li>Redirect 301 dày đặc và rối, gây mất link equity đáng kể</li>
-          <li>Không có content cluster, không có cấu trúc topic rõ ràng</li>
-          <li>CTA yếu, landing page không tối ưu cho chuyển đổi</li>
-        </ul>
-
-        <hr class="case-divider" />
-
-        <div class="case-section-title">Giải pháp triển khai</div>
-        <ul>
-          <li>Audit 3 trục (Technical · Content · UX) → lập priority matrix</li>
-          <li>Tái cơ cấu hoàn toàn danh mục sản phẩm và cấu trúc URL</li>
-          <li>Xây dựng content cluster: 5 pillar page + 30+ supporting page</li>
-          <li>Tối ưu UX/UI: redesign navigation, cải thiện CTA và layout trang sản phẩm</li>
-          <li>Làm sạch toàn bộ redirect chain, tối ưu lại link equity flow</li>
-          <li>Triển khai backlink, entity và guest post trên 20 nguồn uy tín</li>
-          <li>A/B test title tag và meta description → tăng CTR trung bình 18%</li>
-        </ul>
+        <div class="case-cols">
+          <div class="case-col">
+            <h5>Vấn đề ban đầu</h5>
+            <ul>
+              <li>UX/UI kém, bounce rate cao, onsite dưới 1 phút</li>
+              <li>Redirect 301 dày đặc gây mất link equity</li>
+              <li>Không có video hay hình ảnh thực tế sản phẩm</li>
+              <li>CTA yếu, landing page không tối ưu chuyển đổi</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h5>Giải pháp triển khai</h5>
+            <ul>
+              <li>Xây content cluster: 5 pillar page + 30+ supporting page</li>
+              <li>Quay video review, chụp ảnh sản phẩm thay ảnh stock</li>
+              <li>Làm sạch redirect chain, tối ưu lại link equity flow</li>
+              <li>A/B test title tag và meta description, tăng CTR 18%</li>
+            </ul>
+          </div>
+        </div>
 
         <div class="case-metrics">
-          <div class="metric-box">
-            <div class="m-val" style="color:#4ade80">1K → 6K</div>
-            <div class="m-lbl">Organic traffic / tháng (4 tháng)</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#60a5fa">–34%</div>
-            <div class="m-lbl">Bounce rate giảm</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#a5b4fc">+2.1 phút</div>
-            <div class="m-lbl">Thời gian onsite tăng</div>
-          </div>
-          <div class="metric-box">
-            <div class="m-val" style="color:#67e8f9">+18%</div>
-            <div class="m-lbl">CTR tăng sau A/B test</div>
-          </div>
+          <div class="cm-cell"><div class="v">1K → 6K</div><div class="l">Traffic / tháng (4 tháng)</div></div>
+          <div class="cm-cell"><div class="v">–34%</div><div class="l">Bounce rate giảm</div></div>
+          <div class="cm-cell"><div class="v">+2.1 phút</div><div class="l">Thời gian onsite tăng</div></div>
+          <div class="cm-cell"><div class="v">+18%</div><div class="l">CTR tăng sau A/B test</div></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ CONTACT -->
-<section class="alt" id="contact">
-  <div class="wrap">
-    <div class="contact-wrap reveal">
-      <div class="section-label" style="justify-content:center;margin-bottom:16px">
-        <span>Get In Touch</span>
-      </div>
-      <h2>Cùng xây dựng organic channel<br>tăng trưởng thật sự</h2>
-      <p>
-        Nếu bạn đang cần một SEO Specialist hiểu kỹ thuật, biết làm content và ra quyết định dựa trên data
-        — hãy kết nối với tôi. Tôi sẵn sàng trao đổi về chiến lược SEO hoặc đơn giản là một buổi coffee chat.
-      </p>
+<!-- ═══════════════ CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="reveal">
+      <h2>Cùng xây dựng kênh organic <i>tăng trưởng thật.</i></h2>
+      <p>Nếu bạn cần một SEO Specialist hiểu kỹ thuật, biết viết content và chủ động sản xuất hình ảnh/video — hãy kết nối với tôi để trao đổi về chiến lược.</p>
+    </div>
+    <div class="reveal">
       <div class="contact-links">
-        <a href="mailto:pdt1302@gmail.com" class="btn btn-primary">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          pdt1302@gmail.com
-        </a>
-        <a href="tel:0888881265" class="btn btn-ghost">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          0888 881 265
-        </a>
-        <a href="https://facebook.com/dyntane" target="_blank" class="btn btn-ghost">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          Facebook
-        </a>
+        <a href="mailto:pdt1302@gmail.com" class="c-link"><span>pdt1302@gmail.com</span><span class="arrow">↗</span></a>
+        <a href="tel:0888881265" class="c-link"><span>0888 881 265</span><span class="arrow">↗</span></a>
+        <a href="https://facebook.com/dyntane" target="_blank" class="c-link"><span>fb.com/dyntane</span><span class="arrow">↗</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ FOOTER -->
 <footer>
-  <div class="wrap">
-    <span>Phùng Đình Thạnh</span> · SEO &amp; Content Manager Portfolio · © 2026
-  </div>
+  Phùng Đình Thạnh · SEO &amp; Content Manager Portfolio · © 2026
 </footer>
 
 <script>
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in') })
-}, { threshold: 0.1 })
+}, { threshold: 0.08 })
 document.querySelectorAll('.reveal').forEach(el => io.observe(el))
 </script>
 </body>
