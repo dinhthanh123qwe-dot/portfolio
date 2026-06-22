@@ -59,7 +59,18 @@ nav{
   font-size:13px;font-weight:600;transition:.2s;
 }
 .nav-cta:hover{background:var(--ink);color:var(--bg)}
-.nav-right{display:flex;align-items:center;gap:14px}
+.nav-right{display:flex;align-items:center;gap:10px}
+
+/* ─── LANGUAGE TOGGLE ─── */
+.lang-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:36px;padding:0 15px;flex-shrink:0;
+  border:1px solid var(--line2);border-radius:999px;background:none;
+  font-size:12.5px;font-weight:700;letter-spacing:0.03em;color:var(--ink);
+  cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;
+}
+.lang-toggle:hover{border-color:var(--ink);background:var(--bg-soft)}
+.lang-toggle:active{transform:scale(0.96)}
 
 /* mobile menu toggle — hidden on desktop */
 .menu-toggle{
@@ -337,8 +348,10 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
   /* nav */
   .nav-inner{height:56px}
   .nav-links{display:none}
-  .logo{font-size:16px}
-  .nav-cta{padding:7px 14px;font-size:12px}
+  .logo{font-size:15px}
+  .nav-right{gap:8px}
+  .nav-cta{display:none}
+  .lang-toggle{height:32px;padding:0 12px;font-size:11.5px}
   .menu-toggle{display:flex}
   .mobile-menu{
     display:block;position:absolute;top:56px;left:0;right:0;
@@ -423,6 +436,8 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
 
 /* Small phone */
 @media(max-width:460px){
+  .logo{font-size:14px}
+  .lang-toggle{padding:0 10px;font-size:11px}
   .stats-row{grid-template-columns:1fr}
   .stat-cell{border-right:none !important;border-bottom:1px solid var(--line) !important}
   .stat-cell:last-child{border-bottom:none !important}
@@ -442,23 +457,24 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
   <div class="wrap nav-inner">
     <div class="logo">Phùng Đình Thạnh<span class="dot">.</span></div>
     <div class="nav-links">
-      <a href="#about">Giới thiệu</a>
-      <a href="#experience">Kinh nghiệm</a>
-      <a href="#skills">Năng lực</a>
-      <a href="#cases">Case study</a>
+      <a href="#about" data-en="About">Giới thiệu</a>
+      <a href="#experience" data-en="Experience">Kinh nghiệm</a>
+      <a href="#skills" data-en="Skills">Năng lực</a>
+      <a href="#cases" data-en="Case Studies">Case study</a>
     </div>
     <div class="nav-right">
-      <a href="#contact" class="nav-cta">Liên hệ</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">
+      <a href="#contact" class="nav-cta" data-en="Contact">Liên hệ</a>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" data-en-aria="Open menu" aria-expanded="false">
         <span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">Giới thiệu</a>
-      <a href="#experience">Kinh nghiệm</a>
-      <a href="#skills">Năng lực</a>
-      <a href="#cases">Case study</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="#about" data-en="About">Giới thiệu</a>
+      <a href="#experience" data-en="Experience">Kinh nghiệm</a>
+      <a href="#skills" data-en="Skills">Năng lực</a>
+      <a href="#cases" data-en="Case Studies">Case study</a>
+      <a href="#contact" data-en="Contact">Liên hệ</a>
     </div>
   </div>
 </nav>
@@ -469,35 +485,35 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="hero-top reveal">
       <div>
         <div class="kicker"><span class="line"></span> SEO & Content Manager Portfolio</div>
-        <h1>Tăng trưởng organic traffic bằng chiến lược <i>SEO</i> và nội dung được sản xuất chuyên nghiệp.</h1>
+        <h1 data-en="Driving organic traffic growth through &lt;i&gt;SEO&lt;/i&gt; strategy and professionally produced content.">Tăng trưởng organic traffic bằng chiến lược <i>SEO</i> và nội dung được sản xuất chuyên nghiệp.</h1>
       </div>
       <div class="role-tag">
         <div class="r1">Phùng Đình Thạnh</div>
-        <div class="r2">TP. Hồ Chí Minh, Việt Nam</div>
+        <div class="r2" data-en="Ho Chi Minh City, Vietnam">TP. Hồ Chí Minh, Việt Nam</div>
       </div>
     </div>
 
     <div class="hero-body">
       <div class="reveal">
-        <p class="hero-desc">
+        <p class="hero-desc" data-en="I build end-to-end SEO strategy &mdash; from &lt;strong&gt;technical audit, content clusters to entity and link building&lt;/strong&gt; &mdash; and personally produce multi-platform content using &lt;strong&gt;AI tools, video editing and product photography&lt;/strong&gt;, so every campaign not only ranks but also delivers the right brand message.">
           Tôi xây dựng chiến lược SEO tổng thể — từ <strong>technical audit, content cluster đến entity &amp; link building</strong> —
           và trực tiếp sản xuất nội dung đa nền tảng bằng <strong>công cụ AI, dựng video và chụp ảnh sản phẩm</strong>
           để mỗi chiến dịch không chỉ lên top mà còn truyền tải đúng thông điệp thương hiệu.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-dark">Liên hệ hợp tác</a>
-          <a href="#cases" class="btn btn-line">Xem case study</a>
+          <a href="#contact" class="btn btn-dark" data-en="Get in touch">Liên hệ hợp tác</a>
+          <a href="#cases" class="btn btn-line" data-en="View case studies">Xem case study</a>
         </div>
       </div>
 
       <div class="reveal">
         <div class="info-list">
-          <div class="info-row"><span class="k">Ngày sinh</span><span class="v">12/02/2000</span></div>
+          <div class="info-row"><span class="k" data-en="Date of birth">Ngày sinh</span><span class="v">12/02/2000</span></div>
           <div class="info-row"><span class="k">Email</span><span class="v"><a href="mailto:pdt1302@gmail.com">pdt1302@gmail.com</a></span></div>
-          <div class="info-row"><span class="k">Điện thoại</span><span class="v"><a href="tel:0888881265">0888 881 265</a></span></div>
-          <div class="info-row"><span class="k">Địa chỉ</span><span class="v">P.5, Q.Gò Vấp, TP.HCM</span></div>
+          <div class="info-row"><span class="k" data-en="Phone">Điện thoại</span><span class="v"><a href="tel:0888881265">0888 881 265</a></span></div>
+          <div class="info-row"><span class="k" data-en="Address">Địa chỉ</span><span class="v" data-en="Ward 5, Go Vap District, HCMC">P.5, Q.Gò Vấp, TP.HCM</span></div>
           <div class="info-row"><span class="k">Facebook</span><span class="v"><a href="https://facebook.com/dyntane" target="_blank">fb.com/dyntane</a></span></div>
-          <div class="info-row"><span class="k">Học vấn</span><span class="v">Cao Đẳng Văn Lang</span></div>
+          <div class="info-row"><span class="k" data-en="Education">Học vấn</span><span class="v" data-en="Van Lang College">Cao Đẳng Văn Lang</span></div>
         </div>
       </div>
     </div>
@@ -510,19 +526,19 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="stats-row">
       <div class="stat-cell reveal">
         <div class="num">3+</div>
-        <div class="lbl">Năm kinh nghiệm SEO &amp; Content</div>
+        <div class="lbl" data-en="Years of SEO and Content experience">Năm kinh nghiệm SEO &amp; Content</div>
       </div>
       <div class="stat-cell reveal">
         <div class="num">+500%</div>
-        <div class="lbl">Tăng trưởng organic traffic cao nhất ghi nhận</div>
+        <div class="lbl" data-en="Highest recorded organic traffic growth">Tăng trưởng organic traffic cao nhất ghi nhận</div>
       </div>
       <div class="stat-cell reveal">
         <div class="num">3</div>
-        <div class="lbl">Ngành đã triển khai: B2B, E-commerce, Logistics</div>
+        <div class="lbl" data-en="Industries served: B2B, E-commerce, Logistics">Ngành đã triển khai: B2B, E-commerce, Logistics</div>
       </div>
       <div class="stat-cell reveal">
         <div class="num">360°</div>
-        <div class="lbl">Quy trình: chiến lược → nội dung → sản xuất media</div>
+        <div class="lbl" data-en="Process: strategy &rarr; content &rarr; media production">Quy trình: chiến lược → nội dung → sản xuất media</div>
       </div>
     </div>
   </div>
@@ -534,41 +550,41 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="sec-head reveal">
       <div class="sec-num">01 <span></span></div>
       <div>
-        <h2 class="sec-title">Năng lực cốt lõi</h2>
-        <p class="sec-desc">Ba trụ cột tạo nên một chiến lược SEO bền vững — kỹ thuật vững, nội dung đúng intent và năng lực sản xuất media hỗ trợ trực tiếp cho chiến dịch.</p>
+        <h2 class="sec-title" data-en="Core Capabilities">Năng lực cốt lõi</h2>
+        <p class="sec-desc" data-en="Three pillars behind a sustainable SEO strategy &mdash; solid technical foundations, intent-driven content, and in-house media production that directly supports every campaign.">Ba trụ cột tạo nên một chiến lược SEO bền vững — kỹ thuật vững, nội dung đúng intent và năng lực sản xuất media hỗ trợ trực tiếp cho chiến dịch.</p>
       </div>
     </div>
 
     <div class="cap-grid reveal">
       <div class="cap-cell">
         <div class="idx">01</div>
-        <h3>Chiến lược SEO tổng thể</h3>
-        <p>Audit kỹ thuật, nghiên cứu từ khóa theo cluster, phân tích đối thủ và lên roadmap SEO theo từng giai đoạn tăng trưởng — mọi quyết định đều bám theo dữ liệu thực.</p>
+        <h3 data-en="Holistic SEO Strategy">Chiến lược SEO tổng thể</h3>
+        <p data-en="Technical audits, cluster-based keyword research, competitor analysis and phased SEO roadmaps &mdash; every decision grounded in real data.">Audit kỹ thuật, nghiên cứu từ khóa theo cluster, phân tích đối thủ và lên roadmap SEO theo từng giai đoạn tăng trưởng — mọi quyết định đều bám theo dữ liệu thực.</p>
       </div>
       <div class="cap-cell">
         <div class="idx">02</div>
         <h3>Technical SEO &amp; Core Web Vitals</h3>
-        <p>Xử lý crawl budget, cấu trúc URL, schema markup, tối ưu LCP/CLS/FID — đảm bảo nền tảng kỹ thuật sạch để nội dung có cơ hội xếp hạng tốt nhất.</p>
+        <p data-en="Managing crawl budget, URL structure, schema markup, and optimizing LCP/CLS/FID &mdash; keeping the technical foundation clean so content has the best chance to rank.">Xử lý crawl budget, cấu trúc URL, schema markup, tối ưu LCP/CLS/FID — đảm bảo nền tảng kỹ thuật sạch để nội dung có cơ hội xếp hạng tốt nhất.</p>
       </div>
       <div class="cap-cell">
         <div class="idx">03</div>
         <h3>Content Strategy &amp; Topical Authority</h3>
-        <p>Xây dựng content pillar, content cluster và internal linking theo topic để website đạt độ uy tín chuyên môn (E-E-A-T) bền vững trong mắt Google.</p>
+        <p data-en="Building pillar pages, content clusters and topic-based internal linking so the site earns durable E-E-A-T authority with Google.">Xây dựng content pillar, content cluster và internal linking theo topic để website đạt độ uy tín chuyên môn (E-E-A-T) bền vững trong mắt Google.</p>
       </div>
       <div class="cap-cell">
         <div class="idx">04</div>
-        <h3>Ứng dụng AI vào content production</h3>
-        <p>Dùng công cụ AI để rút ngắn thời gian research, brief content, tạo dàn ý chuẩn SEO và hỗ trợ biên tập — tăng tốc độ sản xuất mà vẫn giữ chất lượng và giọng văn thương hiệu.</p>
+        <h3 data-en="Applying AI to Content Production">Ứng dụng AI vào content production</h3>
+        <p data-en="Using AI tools to speed up research, content briefs, SEO-ready outlines and editing support &mdash; faster production without sacrificing quality or brand voice.">Dùng công cụ AI để rút ngắn thời gian research, brief content, tạo dàn ý chuẩn SEO và hỗ trợ biên tập — tăng tốc độ sản xuất mà vẫn giữ chất lượng và giọng văn thương hiệu.</p>
       </div>
       <div class="cap-cell">
         <div class="idx">05</div>
-        <h3>Quay dựng video sản phẩm &amp; thương hiệu</h3>
-        <p>Trực tiếp quay và edit video ngắn cho landing page, social và quảng cáo — đảm bảo nội dung hình ảnh đồng bộ với chiến lược SEO và thông điệp truyền thông.</p>
+        <h3 data-en="Product and Brand Video Production">Quay dựng video sản phẩm &amp; thương hiệu</h3>
+        <p data-en="Shooting and editing short videos for landing pages, social and ads &mdash; keeping visual content aligned with SEO strategy and brand messaging.">Trực tiếp quay và edit video ngắn cho landing page, social và quảng cáo — đảm bảo nội dung hình ảnh đồng bộ với chiến lược SEO và thông điệp truyền thông.</p>
       </div>
       <div class="cap-cell">
         <div class="idx">06</div>
-        <h3>Chụp ảnh sản phẩm chuyên nghiệp</h3>
-        <p>Tự trang bị thiết bị chụp sản phẩm chuyên dụng, đảm bảo hình ảnh chuẩn ánh sáng, bố cục và đồng nhất thương hiệu cho website, landing page và catalogue.</p>
+        <h3 data-en="Professional Product Photography">Chụp ảnh sản phẩm chuyên nghiệp</h3>
+        <p data-en="Equipped with dedicated product photography gear, ensuring proper lighting, composition and brand consistency across the website, landing pages and catalogues.">Tự trang bị thiết bị chụp sản phẩm chuyên dụng, đảm bảo hình ảnh chuẩn ánh sáng, bố cục và đồng nhất thương hiệu cho website, landing page và catalogue.</p>
       </div>
     </div>
   </div>
@@ -580,8 +596,8 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="sec-head">
       <div class="sec-num">02 <span></span></div>
       <div>
-        <h2 class="sec-title">Kinh nghiệm làm việc</h2>
-        <p class="sec-desc">Ba dự án qua ba mô hình kinh doanh khác nhau — mỗi nơi đòi hỏi cách tiếp cận SEO và sản xuất nội dung riêng.</p>
+        <h2 class="sec-title" data-en="Work Experience">Kinh nghiệm làm việc</h2>
+        <p class="sec-desc" data-en="Three projects across three different business models &mdash; each requiring its own approach to SEO and content production.">Ba dự án qua ba mô hình kinh doanh khác nhau — mỗi nơi đòi hỏi cách tiếp cận SEO và sản xuất nội dung riêng.</p>
       </div>
     </div>
 
@@ -592,39 +608,39 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
           <div class="yr">2022 — 2024</div>
           <h3>Tân Thành Phát</h3>
           <div class="role">SEO &amp; Content Manager</div>
-          <div class="industry">B2B · Thiết bị &amp; dụng cụ công nghiệp<br>Full-time</div>
+          <div class="industry" data-en="B2B &middot; Industrial equipment and tools&lt;br&gt;Full-time">B2B · Thiết bị &amp; dụng cụ công nghiệp<br>Full-time</div>
         </div>
         <div>
-          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635620705905_cc71f478fc6ba1bd3647e91ba91c4c9a.webp" alt="Kết quả SEO tại Tân Thành Phát" class="exp-img" />
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635620705905_cc71f478fc6ba1bd3647e91ba91c4c9a.webp" alt="Kết quả SEO tại Tân Thành Phát" data-en-alt="SEO results at Tan Thanh Phat" class="exp-img" />
 
           <div class="exp-block">
             <div class="exp-block-title">Technical &amp; Onpage</div>
             <ul>
-              <li>Audit kỹ thuật toàn diện: crawl, index, canonical, duplicate content</li>
-              <li>Triển khai redirect 301 đúng luồng, tối ưu Pagespeed và Core Web Vitals</li>
-              <li>Schema markup cho Product, Breadcrumb, FAQ trên toàn site</li>
-              <li>Keyword research và xây content cluster theo từng dòng sản phẩm</li>
+              <li data-en="Comprehensive technical audit: crawl, index, canonical, duplicate content">Audit kỹ thuật toàn diện: crawl, index, canonical, duplicate content</li>
+              <li data-en="Implemented proper 301 redirect flow, optimized Pagespeed and Core Web Vitals">Triển khai redirect 301 đúng luồng, tối ưu Pagespeed và Core Web Vitals</li>
+              <li data-en="Schema markup for Product, Breadcrumb, FAQ sitewide">Schema markup cho Product, Breadcrumb, FAQ trên toàn site</li>
+              <li data-en="Keyword research and content cluster build-out by product line">Keyword research và xây content cluster theo từng dòng sản phẩm</li>
             </ul>
           </div>
           <div class="exp-block">
             <div class="exp-block-title">Content &amp; Media Production</div>
             <ul>
-              <li>Viết lại toàn bộ nội dung sản phẩm và blog theo đúng search intent</li>
-              <li>Dùng AI hỗ trợ research chủ đề, lên dàn ý và rút ngắn thời gian biên tập</li>
-              <li>Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng để thay ảnh stock</li>
-              <li>Xây dựng hệ thống backlink, entity và guest post cho domain</li>
+              <li data-en="Rewrote all product and blog content to match search intent">Viết lại toàn bộ nội dung sản phẩm và blog theo đúng search intent</li>
+              <li data-en="Used AI to support topic research, outlining and faster editing">Dùng AI hỗ trợ research chủ đề, lên dàn ý và rút ngắn thời gian biên tập</li>
+              <li data-en="Shot real product photos with dedicated equipment to replace stock images">Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng để thay ảnh stock</li>
+              <li data-en="Built backlink, entity and guest post systems for the domain">Xây dựng hệ thống backlink, entity và guest post cho domain</li>
             </ul>
           </div>
 
           <div class="exp-result">
-            <div class="r-num">800 → 3.000 lượt/tháng (+275%)</div>
-            <div class="r-detail">Pagespeed cải thiện từ 38 → 87 điểm · 15+ từ khóa lên Top 3 Google</div>
+            <div class="r-num" data-en="800 &rarr; 3,000 visits/month (+275%)">800 → 3.000 lượt/tháng (+275%)</div>
+            <div class="r-detail" data-en="Pagespeed improved from 38 to 87 points &middot; 15+ keywords reached Google Top 3">Pagespeed cải thiện từ 38 → 87 điểm · 15+ từ khóa lên Top 3 Google</div>
           </div>
 
           <div class="media-tags">
             <span class="media-tag"><span class="ic">◆</span> Technical SEO</span>
             <span class="media-tag"><span class="ic">◆</span> Content Cluster</span>
-            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
+            <span class="media-tag" data-en="&lt;span class=&quot;ic&quot;&gt;&#9670;&lt;/span&gt; Product Photography"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
             <span class="media-tag"><span class="ic">◆</span> AI content support</span>
           </div>
         </div>
@@ -638,38 +654,38 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
           <div class="yr">2024 — 2025</div>
           <h3>Tiến Trần Mobile</h3>
           <div class="role">SEO &amp; Content Manager</div>
-          <div class="industry">E-commerce · Điện thoại &amp; công nghệ<br>Online</div>
+          <div class="industry" data-en="E-commerce &middot; Phones and technology&lt;br&gt;Online">E-commerce · Điện thoại &amp; công nghệ<br>Online</div>
         </div>
         <div>
-          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635722852653_b1fc0616684086806a372bf9460e84b6.jpg" alt="Kết quả SEO tại Tiến Trần Mobile" class="exp-img" />
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635722852653_b1fc0616684086806a372bf9460e84b6.jpg" alt="Kết quả SEO tại Tiến Trần Mobile" data-en-alt="SEO results at Tien Tran Mobile" class="exp-img" />
 
           <div class="exp-block">
             <div class="exp-block-title">Technical &amp; Onpage</div>
             <ul>
-              <li>Audit định kỳ theo ba trục: Technical · Content · UX</li>
-              <li>Fix crawl error, duplicate page, làm sạch redirect chain</li>
-              <li>Tối ưu Health Score lên 90+ trên công cụ audit, cải thiện mobile UX</li>
-              <li>Nghiên cứu từ khóa và xây content cluster cho từng nhóm sản phẩm</li>
+              <li data-en="Periodic audits across three pillars: Technical &middot; Content &middot; UX">Audit định kỳ theo ba trục: Technical · Content · UX</li>
+              <li data-en="Fixed crawl errors, duplicate pages, cleaned up redirect chains">Fix crawl error, duplicate page, làm sạch redirect chain</li>
+              <li data-en="Raised Health Score to 90+ on audit tools, improved mobile UX">Tối ưu Health Score lên 90+ trên công cụ audit, cải thiện mobile UX</li>
+              <li data-en="Keyword research and content clusters built for each product group">Nghiên cứu từ khóa và xây content cluster cho từng nhóm sản phẩm</li>
             </ul>
           </div>
           <div class="exp-block">
             <div class="exp-block-title">Content &amp; Media Production</div>
             <ul>
-              <li>Quay và edit video review, unbox sản phẩm cho landing page và social</li>
-              <li>Chụp ảnh sản phẩm chuyên dụng thay thế ảnh nhà cung cấp để tăng độ tin cậy</li>
-              <li>Dùng AI hỗ trợ viết mô tả sản phẩm hàng loạt, đảm bảo nhất quán giọng văn</li>
-              <li>Tối ưu CTA và bố cục landing page để tăng tỷ lệ chuyển đổi</li>
+              <li data-en="Shot and edited review/unboxing videos for landing pages and social">Quay và edit video review, unbox sản phẩm cho landing page và social</li>
+              <li data-en="Replaced supplier images with dedicated product photography to boost trust">Chụp ảnh sản phẩm chuyên dụng thay thế ảnh nhà cung cấp để tăng độ tin cậy</li>
+              <li data-en="Used AI to help write product descriptions at scale, keeping tone consistent">Dùng AI hỗ trợ viết mô tả sản phẩm hàng loạt, đảm bảo nhất quán giọng văn</li>
+              <li data-en="Optimized CTAs and landing page layout to lift conversion rate">Tối ưu CTA và bố cục landing page để tăng tỷ lệ chuyển đổi</li>
             </ul>
           </div>
 
           <div class="exp-result">
-            <div class="r-num">1.000 → 6.000 lượt/tháng (+500%)</div>
-            <div class="r-detail">Bounce rate giảm 34% · Thời gian onsite tăng 2.1 phút · CTR tăng 18%</div>
+            <div class="r-num" data-en="1,000 &rarr; 6,000 visits/month (+500%)">1.000 → 6.000 lượt/tháng (+500%)</div>
+            <div class="r-detail" data-en="Bounce rate down 34% &middot; Time on site up 2.1 minutes &middot; CTR up 18%">Bounce rate giảm 34% · Thời gian onsite tăng 2.1 phút · CTR tăng 18%</div>
           </div>
 
           <div class="media-tags">
-            <span class="media-tag"><span class="ic">◆</span> Quay &amp; edit video</span>
-            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
+            <span class="media-tag" data-en="&lt;span class=&quot;ic&quot;&gt;&#9670;&lt;/span&gt; Video shooting and editing"><span class="ic">◆</span> Quay &amp; edit video</span>
+            <span class="media-tag" data-en="&lt;span class=&quot;ic&quot;&gt;&#9670;&lt;/span&gt; Product Photography"><span class="ic">◆</span> Chụp ảnh sản phẩm</span>
             <span class="media-tag"><span class="ic">◆</span> AI content support</span>
             <span class="media-tag"><span class="ic">◆</span> CRO &amp; Landing page</span>
           </div>
@@ -684,38 +700,38 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
           <div class="yr">2025 — 01/2026</div>
           <h3>Vận Chuyển Phùng Quân</h3>
           <div class="role">SEO &amp; Content Manager</div>
-          <div class="industry">Dịch vụ · Vận chuyển &amp; logistics<br>Online</div>
+          <div class="industry" data-en="Service &middot; Shipping and logistics&lt;br&gt;Online">Dịch vụ · Vận chuyển &amp; logistics<br>Online</div>
         </div>
         <div>
-          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635743207336_fa6817641e26750dbf12ba0f9427ee96.jpg" alt="Kết quả SEO tại Vận Chuyển Phùng Quân" class="exp-img" />
+          <img src="https://raw.githubusercontent.com/dinhthanh123qwe-dot/portfolio/main/images/z7635743207336_fa6817641e26750dbf12ba0f9427ee96.jpg" alt="Kết quả SEO tại Vận Chuyển Phùng Quân" data-en-alt="SEO results at Phung Quan Shipping" class="exp-img" />
 
           <div class="exp-block">
             <div class="exp-block-title">Technical &amp; Onpage</div>
             <ul>
-              <li>Cải thiện UX/UI website, sửa lỗi sitemap, robots.txt và cấu trúc crawl</li>
-              <li>Triển khai Local SEO, tối ưu Google Business Profile và schema FAQ</li>
-              <li>Xây dựng entity và backlink profile cho domain mới hoàn toàn</li>
+              <li data-en="Improved website UX/UI, fixed sitemap, robots.txt and crawl structure">Cải thiện UX/UI website, sửa lỗi sitemap, robots.txt và cấu trúc crawl</li>
+              <li data-en="Implemented Local SEO, optimized Google Business Profile and FAQ schema">Triển khai Local SEO, tối ưu Google Business Profile và schema FAQ</li>
+              <li data-en="Built entity and backlink profile for a brand-new domain">Xây dựng entity và backlink profile cho domain mới hoàn toàn</li>
             </ul>
           </div>
           <div class="exp-block">
             <div class="exp-block-title">Content &amp; Media Production</div>
             <ul>
-              <li>Quay video giới thiệu dịch vụ vận chuyển, chuyển nhà cho kênh social</li>
-              <li>Chụp ảnh thực tế đội xe, kho bãi và quy trình vận chuyển bằng thiết bị chuyên dụng</li>
-              <li>Dùng AI hỗ trợ lên kế hoạch content theo mùa vụ và search intent dịch vụ</li>
-              <li>Triển khai content marketing đa kênh: blog, social, PR ngành logistics</li>
+              <li data-en="Produced shipping and moving service intro videos for social channels">Quay video giới thiệu dịch vụ vận chuyển, chuyển nhà cho kênh social</li>
+              <li data-en="Captured real photos of the fleet, warehouse and shipping process with dedicated equipment">Chụp ảnh thực tế đội xe, kho bãi và quy trình vận chuyển bằng thiết bị chuyên dụng</li>
+              <li data-en="Used AI to plan seasonal content aligned with service search intent">Dùng AI hỗ trợ lên kế hoạch content theo mùa vụ và search intent dịch vụ</li>
+              <li data-en="Ran multi-channel content marketing: blog, social, logistics industry PR">Triển khai content marketing đa kênh: blog, social, PR ngành logistics</li>
             </ul>
           </div>
 
           <div class="exp-result">
-            <div class="r-num">Top 10 cho 20+ từ khóa dịch vụ trong 3 tháng</div>
-            <div class="r-detail">Domain Authority tăng từ 0 → DR 18 · Local pack Top 3 khu vực</div>
+            <div class="r-num" data-en="Top 10 for 20+ service keywords within 3 months">Top 10 cho 20+ từ khóa dịch vụ trong 3 tháng</div>
+            <div class="r-detail" data-en="Domain Authority grew from 0 to DR 18 &middot; Local pack Top 3 in the area">Domain Authority tăng từ 0 → DR 18 · Local pack Top 3 khu vực</div>
           </div>
 
           <div class="media-tags">
             <span class="media-tag"><span class="ic">◆</span> Local SEO</span>
-            <span class="media-tag"><span class="ic">◆</span> Quay video dịch vụ</span>
-            <span class="media-tag"><span class="ic">◆</span> Chụp ảnh thực tế</span>
+            <span class="media-tag" data-en="&lt;span class=&quot;ic&quot;&gt;&#9670;&lt;/span&gt; Service Video Production"><span class="ic">◆</span> Quay video dịch vụ</span>
+            <span class="media-tag" data-en="&lt;span class=&quot;ic&quot;&gt;&#9670;&lt;/span&gt; On-site Photography"><span class="ic">◆</span> Chụp ảnh thực tế</span>
             <span class="media-tag"><span class="ic">◆</span> AI content planning</span>
           </div>
         </div>
@@ -731,15 +747,15 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="sec-head reveal">
       <div class="sec-num">03 <span></span></div>
       <div>
-        <h2 class="sec-title">Năng lực chuyên môn</h2>
-        <p class="sec-desc">Bộ kỹ năng SEO làm trọng tâm, mở rộng thêm năng lực sản xuất nội dung để chủ động toàn bộ quy trình content.</p>
+        <h2 class="sec-title" data-en="Professional Skills">Năng lực chuyên môn</h2>
+        <p class="sec-desc" data-en="A core SEO skillset extended with content production capabilities to own the entire content process end to end.">Bộ kỹ năng SEO làm trọng tâm, mở rộng thêm năng lực sản xuất nội dung để chủ động toàn bộ quy trình content.</p>
       </div>
     </div>
 
     <div class="skills-layout reveal">
       <div>
         <div class="skill-group">
-          <h4>SEO &amp; Chiến lược</h4>
+          <h4 data-en="SEO and Strategy">SEO &amp; Chiến lược</h4>
           <div class="bar-row">
             <div class="bar-top"><span class="name">SEO Onpage &amp; Technical</span><span class="pct">92%</span></div>
             <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
@@ -759,17 +775,17 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
         </div>
 
         <div class="skill-group">
-          <h4>Content Production bổ trợ</h4>
+          <h4 data-en="Supplementary Content Production">Content Production bổ trợ</h4>
           <div class="bar-row">
-            <div class="bar-top"><span class="name">Ứng dụng AI vào content workflow</span><span class="pct">80%</span></div>
+            <div class="bar-top"><span class="name" data-en="Applying AI to content workflow">Ứng dụng AI vào content workflow</span><span class="pct">80%</span></div>
             <div class="bar-track"><div class="bar-fill accent" style="width:80%"></div></div>
           </div>
           <div class="bar-row">
-            <div class="bar-top"><span class="name">Quay &amp; chỉnh sửa video sản phẩm</span><span class="pct">75%</span></div>
+            <div class="bar-top"><span class="name" data-en="Product video shooting and editing">Quay &amp; chỉnh sửa video sản phẩm</span><span class="pct">75%</span></div>
             <div class="bar-track"><div class="bar-fill accent" style="width:75%"></div></div>
           </div>
           <div class="bar-row">
-            <div class="bar-top"><span class="name">Chụp ảnh sản phẩm chuyên dụng</span><span class="pct">78%</span></div>
+            <div class="bar-top"><span class="name" data-en="Dedicated product photography">Chụp ảnh sản phẩm chuyên dụng</span><span class="pct">78%</span></div>
             <div class="bar-track"><div class="bar-fill accent" style="width:78%"></div></div>
           </div>
           <div class="bar-row">
@@ -779,14 +795,14 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
         </div>
 
         <div class="skill-group">
-          <h4>Công cụ sử dụng</h4>
+          <h4 data-en="Tools Used">Công cụ sử dụng</h4>
           <div class="tool-tags">
             <span class="tool-tag">Google Search Console</span>
             <span class="tool-tag">Google Analytics 4</span>
             <span class="tool-tag">Ahrefs</span>
             <span class="tool-tag">Screaming Frog</span>
-            <span class="tool-tag">ChatGPT / Gemini cho content</span>
-            <span class="tool-tag">Capcut / Premiere cơ bản</span>
+            <span class="tool-tag" data-en="ChatGPT / Gemini for content">ChatGPT / Gemini cho content</span>
+            <span class="tool-tag" data-en="Capcut / Premiere basics">Capcut / Premiere cơ bản</span>
             <span class="tool-tag">Lightroom</span>
             <span class="tool-tag">Schema Markup</span>
             <span class="tool-tag">Google Tag Manager</span>
@@ -797,29 +813,29 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
         <div class="equip-box">
           <div class="e-ic">📷</div>
           <div>
-            <h4>Thiết bị chụp sản phẩm sẵn có</h4>
-            <p>Tự trang bị bộ thiết bị chụp ảnh sản phẩm chuyên dụng (đèn, phông, máy ảnh) — chủ động sản xuất hình ảnh thương hiệu mà không cần phụ thuộc bên thứ ba, tiết kiệm thời gian và chi phí cho doanh nghiệp.</p>
+            <h4 data-en="In-house Product Photography Equipment">Thiết bị chụp sản phẩm sẵn có</h4>
+            <p data-en="Self-equipped with dedicated product photography gear (lighting, backdrop, camera) &mdash; producing brand imagery independently without relying on third parties, saving time and cost for the business.">Tự trang bị bộ thiết bị chụp ảnh sản phẩm chuyên dụng (đèn, phông, máy ảnh) — chủ động sản xuất hình ảnh thương hiệu mà không cần phụ thuộc bên thứ ba, tiết kiệm thời gian và chi phí cho doanh nghiệp.</p>
           </div>
         </div>
       </div>
 
       <div>
         <div class="side-panel">
-          <h4>Học vấn</h4>
-          <p>Cao Đẳng Văn Lang · 2018 – 2021</p>
-          <p class="tiny">TP. Hồ Chí Minh</p>
+          <h4 data-en="Education">Học vấn</h4>
+          <p data-en="Van Lang College &middot; 2018 &ndash; 2021">Cao Đẳng Văn Lang · 2018 – 2021</p>
+          <p class="tiny" data-en="Ho Chi Minh City">TP. Hồ Chí Minh</p>
         </div>
         <div class="side-panel">
-          <h4>Mục tiêu nghề nghiệp</h4>
-          <p>Phát triển lên vị trí Senior SEO Specialist hoặc SEO Lead, dẫn dắt chiến lược SEO tổng thể với khả năng chủ động toàn bộ quy trình content — từ chiến lược, viết bài đến sản xuất hình ảnh/video.</p>
+          <h4 data-en="Career Goal">Mục tiêu nghề nghiệp</h4>
+          <p data-en="Growing into a Senior SEO Specialist or SEO Lead role, leading holistic SEO strategy with end-to-end ownership of the content process &mdash; from strategy and writing to image/video production.">Phát triển lên vị trí Senior SEO Specialist hoặc SEO Lead, dẫn dắt chiến lược SEO tổng thể với khả năng chủ động toàn bộ quy trình content — từ chiến lược, viết bài đến sản xuất hình ảnh/video.</p>
         </div>
         <div class="side-panel">
-          <h4>Phương pháp làm việc</h4>
-          <p>Audit trước, fix nền tảng kỹ thuật, sau đó triển khai content và authority song song. Tận dụng AI để tăng tốc độ nhưng vẫn kiểm soát chất lượng và giọng văn thương hiệu.</p>
+          <h4 data-en="Working Method">Phương pháp làm việc</h4>
+          <p data-en="Audit first, fix the technical foundation, then run content and authority building in parallel. Leveraging AI to move faster while keeping quality and brand voice under control.">Audit trước, fix nền tảng kỹ thuật, sau đó triển khai content và authority song song. Tận dụng AI để tăng tốc độ nhưng vẫn kiểm soát chất lượng và giọng văn thương hiệu.</p>
         </div>
         <div class="side-panel">
-          <h4>Sở thích</h4>
-          <p>Bơi lội · Đá banh · Nhiếp ảnh sản phẩm</p>
+          <h4 data-en="Interests">Sở thích</h4>
+          <p data-en="Swimming &middot; Football &middot; Product photography">Bơi lội · Đá banh · Nhiếp ảnh sản phẩm</p>
         </div>
       </div>
     </div>
@@ -832,8 +848,8 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
     <div class="sec-head reveal">
       <div class="sec-num">04 <span></span></div>
       <div>
-        <h2 class="sec-title">Case study tiêu biểu</h2>
-        <p class="sec-desc">Hai dự án với số liệu minh chứng cụ thể — từ vấn đề, giải pháp triển khai đến kết quả đo lường được.</p>
+        <h2 class="sec-title" data-en="Featured Case Studies">Case study tiêu biểu</h2>
+        <p class="sec-desc" data-en="Two projects backed by concrete data &mdash; from the problem and the solution implemented to measurable results.">Hai dự án với số liệu minh chứng cụ thể — từ vấn đề, giải pháp triển khai đến kết quả đo lường được.</p>
       </div>
     </div>
 
@@ -843,7 +859,7 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
         <div class="case-head">
           <div>
             <h3>SEO &amp; Content — Tân Thành Phát</h3>
-            <div class="dom">B2B Thiết bị công nghiệp</div>
+            <div class="dom" data-en="B2B Industrial Equipment">B2B Thiết bị công nghiệp</div>
           </div>
           <div class="case-result">
             <div class="num">+275%</div>
@@ -853,30 +869,30 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
 
         <div class="case-cols">
           <div class="case-col">
-            <h5>Vấn đề ban đầu</h5>
+            <h5 data-en="Initial Problem">Vấn đề ban đầu</h5>
             <ul>
-              <li>Pagespeed chỉ đạt 38/100, cấu trúc site rời rạc</li>
-              <li>Nội dung không có keyword, ảnh sản phẩm dùng ảnh nhà cung cấp</li>
-              <li>Lỗi canonical, duplicate content, index lộn xộn</li>
-              <li>Domain authority gần như bằng 0, không có backlink</li>
+              <li data-en="Pagespeed at only 38/100, fragmented site structure">Pagespeed chỉ đạt 38/100, cấu trúc site rời rạc</li>
+              <li data-en="Content lacked keywords, product images were supplier-provided">Nội dung không có keyword, ảnh sản phẩm dùng ảnh nhà cung cấp</li>
+              <li data-en="Canonical errors, duplicate content, messy indexing">Lỗi canonical, duplicate content, index lộn xộn</li>
+              <li data-en="Domain authority near zero, no backlinks">Domain authority gần như bằng 0, không có backlink</li>
             </ul>
           </div>
           <div class="case-col">
-            <h5>Giải pháp triển khai</h5>
+            <h5 data-en="Solutions Implemented">Giải pháp triển khai</h5>
             <ul>
-              <li>Audit kỹ thuật toàn diện, fix 47 lỗi theo mức độ ưu tiên</li>
-              <li>Viết lại 80+ trang nội dung theo đúng search intent</li>
-              <li>Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng</li>
-              <li>Xây 15 guest post và thiết lập entity cho brand</li>
+              <li data-en="Full technical audit, fixed 47 issues by priority">Audit kỹ thuật toàn diện, fix 47 lỗi theo mức độ ưu tiên</li>
+              <li data-en="Rewrote 80+ content pages to match search intent">Viết lại 80+ trang nội dung theo đúng search intent</li>
+              <li data-en="Shot real product photos with dedicated equipment">Chụp ảnh sản phẩm thực tế bằng thiết bị chuyên dụng</li>
+              <li data-en="Built 15 guest posts and established brand entity">Xây 15 guest post và thiết lập entity cho brand</li>
             </ul>
           </div>
         </div>
 
         <div class="case-metrics">
-          <div class="cm-cell"><div class="v">800 → 3.000</div><div class="l">Traffic / tháng (3 tháng)</div></div>
+          <div class="cm-cell"><div class="v">800 → 3.000</div><div class="l" data-en="Traffic / month (3 months)">Traffic / tháng (3 tháng)</div></div>
           <div class="cm-cell"><div class="v">38 → 87</div><div class="l">Pagespeed score</div></div>
-          <div class="cm-cell"><div class="v">15+</div><div class="l">Từ khóa Top 3</div></div>
-          <div class="cm-cell"><div class="v">47</div><div class="l">Lỗi technical đã fix</div></div>
+          <div class="cm-cell"><div class="v">15+</div><div class="l" data-en="Keywords in Top 3">Từ khóa Top 3</div></div>
+          <div class="cm-cell"><div class="v">47</div><div class="l" data-en="Technical issues fixed">Lỗi technical đã fix</div></div>
         </div>
       </div>
 
@@ -885,7 +901,7 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
         <div class="case-head">
           <div>
             <h3>SEO &amp; Content — Tiến Trần Mobile</h3>
-            <div class="dom">E-commerce công nghệ</div>
+            <div class="dom" data-en="E-commerce Technology">E-commerce công nghệ</div>
           </div>
           <div class="case-result">
             <div class="num">+500%</div>
@@ -895,30 +911,30 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
 
         <div class="case-cols">
           <div class="case-col">
-            <h5>Vấn đề ban đầu</h5>
+            <h5 data-en="Initial Problem">Vấn đề ban đầu</h5>
             <ul>
-              <li>UX/UI kém, bounce rate cao, onsite dưới 1 phút</li>
-              <li>Redirect 301 dày đặc gây mất link equity</li>
-              <li>Không có video hay hình ảnh thực tế sản phẩm</li>
-              <li>CTA yếu, landing page không tối ưu chuyển đổi</li>
+              <li data-en="Poor UX/UI, high bounce rate, under 1 minute on site">UX/UI kém, bounce rate cao, onsite dưới 1 phút</li>
+              <li data-en="Excessive 301 redirects causing link equity loss">Redirect 301 dày đặc gây mất link equity</li>
+              <li data-en="No video or real product imagery">Không có video hay hình ảnh thực tế sản phẩm</li>
+              <li data-en="Weak CTAs, landing pages not optimized for conversion">CTA yếu, landing page không tối ưu chuyển đổi</li>
             </ul>
           </div>
           <div class="case-col">
-            <h5>Giải pháp triển khai</h5>
+            <h5 data-en="Solutions Implemented">Giải pháp triển khai</h5>
             <ul>
-              <li>Xây content cluster: 5 pillar page + 30+ supporting page</li>
-              <li>Quay video review, chụp ảnh sản phẩm thay ảnh stock</li>
-              <li>Làm sạch redirect chain, tối ưu lại link equity flow</li>
-              <li>A/B test title tag và meta description, tăng CTR 18%</li>
+              <li data-en="Built content cluster: 5 pillar pages + 30+ supporting pages">Xây content cluster: 5 pillar page + 30+ supporting page</li>
+              <li data-en="Shot review videos and product photos to replace stock images">Quay video review, chụp ảnh sản phẩm thay ảnh stock</li>
+              <li data-en="Cleaned up redirect chains, re-optimized link equity flow">Làm sạch redirect chain, tối ưu lại link equity flow</li>
+              <li data-en="A/B tested title tags and meta descriptions, lifting CTR by 18%">A/B test title tag và meta description, tăng CTR 18%</li>
             </ul>
           </div>
         </div>
 
         <div class="case-metrics">
-          <div class="cm-cell"><div class="v">1K → 6K</div><div class="l">Traffic / tháng (4 tháng)</div></div>
-          <div class="cm-cell"><div class="v">–34%</div><div class="l">Bounce rate giảm</div></div>
-          <div class="cm-cell"><div class="v">+2.1 phút</div><div class="l">Thời gian onsite tăng</div></div>
-          <div class="cm-cell"><div class="v">+18%</div><div class="l">CTR tăng sau A/B test</div></div>
+          <div class="cm-cell"><div class="v">1K → 6K</div><div class="l" data-en="Traffic / month (4 months)">Traffic / tháng (4 tháng)</div></div>
+          <div class="cm-cell"><div class="v">–34%</div><div class="l" data-en="Bounce rate decrease">Bounce rate giảm</div></div>
+          <div class="cm-cell"><div class="v">+2.1 phút</div><div class="l" data-en="Time on site increase">Thời gian onsite tăng</div></div>
+          <div class="cm-cell"><div class="v">+18%</div><div class="l" data-en="CTR increase after A/B test">CTR tăng sau A/B test</div></div>
         </div>
       </div>
     </div>
@@ -929,8 +945,8 @@ footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--ink3)}
 <section class="contact" id="contact">
   <div class="wrap contact-inner">
     <div class="reveal">
-      <h2>Cùng xây dựng kênh organic <i>tăng trưởng thật.</i></h2>
-      <p>Nếu bạn cần một SEO Specialist hiểu kỹ thuật, biết viết content và chủ động sản xuất hình ảnh/video — hãy kết nối với tôi để trao đổi về chiến lược.</p>
+      <h2 data-en="Let&#39;s build an organic channel that &lt;i&gt;grows for real.&lt;/i&gt;">Cùng xây dựng kênh organic <i>tăng trưởng thật.</i></h2>
+      <p data-en="If you need an SEO Specialist who understands the technical side, can write content, and produces images/video in-house &mdash; let&#39;s connect to talk strategy.">Nếu bạn cần một SEO Specialist hiểu kỹ thuật, biết viết content và chủ động sản xuất hình ảnh/video — hãy kết nối với tôi để trao đổi về chiến lược.</p>
     </div>
     <div class="reveal">
       <div class="contact-links">
@@ -965,6 +981,36 @@ mobileMenu.querySelectorAll('a').forEach(a => {
     menuToggle.classList.remove('open')
     menuToggle.setAttribute('aria-expanded', 'false')
   })
+})
+
+/* ─── LANGUAGE TOGGLE (VI / EN) ─── */
+const langToggle = document.getElementById('langToggle')
+
+function applyLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if(el.dataset.viCache === undefined) el.dataset.viCache = el.innerHTML
+    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.dataset.viCache
+  })
+  document.querySelectorAll('[data-en-alt]').forEach(el => {
+    if(el.dataset.viAlt === undefined) el.dataset.viAlt = el.getAttribute('alt') || ''
+    el.setAttribute('alt', lang === 'en' ? el.getAttribute('data-en-alt') : el.dataset.viAlt)
+  })
+  document.querySelectorAll('[data-en-aria]').forEach(el => {
+    if(el.dataset.viAria === undefined) el.dataset.viAria = el.getAttribute('aria-label') || ''
+    el.setAttribute('aria-label', lang === 'en' ? el.getAttribute('data-en-aria') : el.dataset.viAria)
+  })
+  document.documentElement.lang = lang
+  langToggle.textContent = lang === 'en' ? 'VI' : 'EN'
+  langToggle.setAttribute('aria-label', lang === 'en' ? 'Chuyển sang tiếng Việt' : 'Switch to English')
+  try { localStorage.setItem('lang', lang) } catch(e) {}
+}
+
+const savedLang = (() => { try { return localStorage.getItem('lang') } catch(e) { return null } })()
+applyLang(savedLang === 'en' ? 'en' : 'vi')
+
+langToggle.addEventListener('click', () => {
+  const next = document.documentElement.lang === 'en' ? 'vi' : 'en'
+  applyLang(next)
 })
 </script>
 </body>
